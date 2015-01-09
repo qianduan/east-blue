@@ -7,8 +7,8 @@
  * many new functions and markup changes introduced in 3.6.
  *
  * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
+ * @subpackage East_Blue
+ * @since East Blue 1.0
  */
 
 /**
@@ -16,14 +16,14 @@
  *
  * Switches to the default theme.
  *
- * @since Twenty Thirteen 1.0
+ * @since East Blue 1.0
  */
-function twentythirteen_switch_theme() {
+function eastBlue_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'twentythirteen_upgrade_notice' );
+	add_action( 'admin_notices', 'eastBlue_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'twentythirteen_switch_theme' );
+add_action( 'after_switch_theme', 'eastBlue_switch_theme' );
 
 /**
  * Add message for unsuccessful theme switch.
@@ -31,33 +31,33 @@ add_action( 'after_switch_theme', 'twentythirteen_switch_theme' );
  * Prints an update nag after an unsuccessful attempt to switch to
  * Twenty Thirteen on WordPress versions prior to 3.6.
  *
- * @since Twenty Thirteen 1.0
+ * @since East Blue 1.0
  */
-function twentythirteen_upgrade_notice() {
-	$message = sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] );
+function eastBlue_upgrade_notice() {
+	$message = sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
 /**
  * Prevent the Customizer from being loaded on WordPress versions prior to 3.6.
  *
- * @since Twenty Thirteen 1.0
+ * @since East Blue 1.0
  */
-function twentythirteen_customize() {
-	wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] ), '', array(
+function eastBlue_customize() {
+	wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'twentythirteen_customize' );
+add_action( 'load-customize.php', 'eastBlue_customize' );
 
 /**
  * Prevent the Theme Preview from being loaded on WordPress versions prior to 3.4.
  *
- * @since Twenty Thirteen 1.0
+ * @since East Blue 1.0
  */
-function twentythirteen_preview() {
+function eastBlue_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'twentythirteen_preview' );
+add_action( 'template_redirect', 'eastBlue_preview' );

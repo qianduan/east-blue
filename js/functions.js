@@ -46,13 +46,13 @@
 			return;
 		}
 
-		button.on( 'click.twentythirteen', function() {
+		button.on( 'click.eastBlue', function() {
 			nav.toggleClass( 'toggled-on' );
 		} );
 
 		// Fix sub-menus for touch devices.
 		if ( 'ontouchstart' in window ) {
-			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.twentythirteen', function( e ) {
+			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.eastBlue', function( e ) {
 				var el = $( this ).parent( 'li' );
 
 				if ( ! el.hasClass( 'focus' ) ) {
@@ -64,7 +64,7 @@
 		}
 
 		// Better focus for hidden submenu items for accessibility.
-		menu.find( 'a' ).on( 'focus.twentythirteen blur.twentythirteen', function() {
+		menu.find( 'a' ).on( 'focus.eastBlue blur.eastBlue', function() {
 			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 		} );
 	} )();
@@ -75,7 +75,7 @@
 	 *
 	 * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
 	 */
-	_window.on( 'hashchange.twentythirteen', function() {
+	_window.on( 'hashchange.eastBlue', function() {
 		var element = document.getElementById( location.hash.substring( 1 ) );
 
 		if ( element ) {

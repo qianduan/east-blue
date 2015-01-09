@@ -3,8 +3,8 @@
  * The template for displaying posts in the Audio post format
  *
  * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
+ * @subpackage East_Blue
+ * @since East Blue 1.0
  */
 ?>
 
@@ -24,18 +24,18 @@
 			<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentythirteen' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'eastBlue' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
 			) );
 
-			wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
+			wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
 		?>
 		</div><!-- .audio-content -->
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php twentythirteen_entry_meta(); ?>
-		<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php eastBlue_entry_meta(); ?>
+		<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="edit-link">', '</span>' ); ?>
 
 		<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 			<?php get_template_part( 'author-bio' ); ?>
