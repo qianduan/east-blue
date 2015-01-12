@@ -664,13 +664,15 @@ main sidebar
 	-ms-hyphens:     auto;
 	hyphens:         auto;
 	margin:20px 0 0;
-	padding: 10px;
+	padding:0;
 	word-wrap: break-word;
 }
 
 .widget .widget-title {
 	font-weight: 700;
-	background-color: #ECF0F1;
+	margin:0;
+	text-indent: 1em;
+	border-bottom: 1px solid #ECF0F1;
 }
 
 .widget ul,

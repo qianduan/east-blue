@@ -41,7 +41,7 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'eastBlue' ),
+				__( '查看全文 %s <span class="meta-nav">&rarr;</span>', 'eastBlue' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
 			) );
 
@@ -53,7 +53,7 @@
 	<footer class="entry-meta">
 		<?php if ( comments_open() && ! is_single() ) : ?>
 			<div class="comments-link">
-				<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'eastBlue' ) . '</span>', __( 'One comment so far', 'eastBlue' ), __( 'View all % comments', 'eastBlue' ) ); ?>
+				<?php comments_popup_link( '<span class="icon-comment">' . __( '评论一下', 'eastBlue' ) . '</span>', __( '一条评论', 'eastBlue' ), __( '%条评论', 'eastBlue' ) ); ?>
 			</div><!-- .comments-link -->
 		<?php endif; // comments_open() ?>
 
