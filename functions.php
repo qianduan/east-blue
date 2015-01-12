@@ -324,9 +324,6 @@ function eastBlue_entry_meta() {
 		echo '<span class="icon-tag">' . $tag_list . '</span>';
 	}
 
-	if ( comments_open() && ! is_single() ) : 
-	comments_popup_link( '<span class="icon-comment">' . __( '评论一下', 'eastBlue' ) . '</span>', __( '一条评论', 'eastBlue' ), __( '%条评论', 'eastBlue' ) ); ?>
-	endif; // comments_open() 
 }
 endif;
 
