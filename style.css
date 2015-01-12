@@ -558,12 +558,15 @@ main framwork
 	color: #fff
 }
 .topbar .search-form{
-	float: right;
+	position: absolute;
+	top:0;
+	right: 0;
 }
 
 .main-content{
 	margin: 0 auto;
 	width: 960px;
+	position: relative;
 }
 .navigation{
 	text-align: center;
@@ -969,11 +972,8 @@ img.wp-smiley,
 }
 
 .single-author .entry-meta .author,
-.sticky.format-standard .entry-meta .date,
-.sticky.format-audio .entry-meta .date,
-.sticky.format-chat .entry-meta .date,
-.sticky.format-image .entry-meta .date,
-.sticky.format-gallery .entry-meta .date {
+.sticky.format-standard .entry-meta .date
+{
 	display: none;
 }
 
@@ -991,28 +991,10 @@ img.wp-smiley,
 	word-wrap: break-word;
 }
 
-.entry-content a,
-.comment-content a {
-	color: #bc360a;
-}
-
-.entry-content a:hover,
-.comment-content a:hover {
-	color: #ea9629;
-}
-
 .entry-content .more-link {
 	white-space: nowrap;
 }
 
-.entry-content blockquote {
-	font-size: 24px;
-}
-
-.entry-content blockquote cite,
-.entry-content blockquote small {
-	font-size: 16px;
-}
 
 .entry-content img.alignleft,
 .entry-content .wp-caption.alignleft {
@@ -1052,28 +1034,19 @@ footer.entry-meta {
 }
 
 .format-status .entry-content .page-links a,
-.format-gallery .entry-content .page-links a,
-.format-chat .entry-content .page-links a,
-.format-quote .entry-content .page-links a,
 .page-links a {
 	background: #e63f2a;
 	border: 1px solid #e63f2a;
 	color: #fff;
 }
 
-.format-gallery .entry-content .page-links a:hover,
-.format-audio .entry-content .page-links a:hover,
 .format-status .entry-content .page-links a:hover,
-.format-video .entry-content .page-links a:hover,
-.format-chat .entry-content .page-links a:hover,
-.format-quote .entry-content .page-links a:hover,
 .page-links a:hover {
 	background: #fff;
 	color: #e63f2a;
 }
 
-.format-status .entry-content .page-links > span,
-.format-quote .entry-content .page-links > span {
+.format-status .entry-content .page-links > span{
 	background: none;
 }
 
@@ -1753,15 +1726,6 @@ footer.entry-meta {
 
 .navigation .nav-next {
 	float: right;
-}
-
-.navigation a {
-	color: #bc360a;
-}
-
-.navigation a:hover {
-	color: #ea9629;
-	text-decoration: none;
 }
 
 .paging-navigation {
