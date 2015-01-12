@@ -250,6 +250,7 @@ nav ul,
 nav ol {
 	list-style: none;
 	list-style-image: none;
+	padding: 0;
 }
 
 li > ul,
@@ -556,10 +557,6 @@ main framwork
 .topbar a,.topbar a:visited {
 	color: #fff
 }
-.topbar .nav-top{
-	display: inline-block;
-	vertical-align: top;
-}
 .topbar .search-form{
 	float: right;
 }
@@ -575,6 +572,46 @@ main framwork
 	display: inline-block;
 	vertical-align: top;
 }
+
+/**
+logo
+**/
+.logo{
+	text-align: center;
+}
+.logo a,.logo a:visited{
+	color: #2C3E50;
+	font-family: "simsun"
+}
+
+.nav-menu li a {
+	display: block;
+	font-size: 15px;
+	line-height: 1;
+	padding: 15px 20px;
+	text-decoration: none;
+}
+
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+.nav-menu li:focus > a,
+.nav-menu li a:focus {
+	color: #2C3E50;
+}
+
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a {
+	color: #2C3E50;
+	font-weight: bold;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+
 /*
  * Responsive images
  *
@@ -767,34 +804,6 @@ img.wp-smiley,
 	margin: 0;
 }
 
-.nav-menu li a {
-	color: #141412;
-	display: block;
-	font-size: 15px;
-	line-height: 1;
-	padding: 15px 20px;
-	text-decoration: none;
-}
-
-.nav-menu li:hover > a,
-.nav-menu li a:hover,
-.nav-menu li:focus > a,
-.nav-menu li a:focus {
-	background-color: #220e10;
-	color: #fff;
-}
-
-.nav-menu .current_page_item > a,
-.nav-menu .current_page_ancestor > a,
-.nav-menu .current-menu-item > a,
-.nav-menu .current-menu-ancestor > a {
-	color: #bc360a;
-	font-style: italic;
-}
-
-.menu-toggle {
-	display: none;
-}
 
 /* Navbar */
 .navbar {

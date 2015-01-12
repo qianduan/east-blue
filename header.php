@@ -36,12 +36,12 @@
 		<div class="main-content">
 			<nav class="nav-top">
 			<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'top-menu' ) ); ?>
-			<?php get_search_form(); ?>
 			</nav>
+			<?php get_search_form(); ?>
 		</div>
 	</div>
 	<header class="header" role="banner">
-		<h1 class="site-title"><a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<!-- 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
 		<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Menu', 'eastBlue' ); ?></button>
