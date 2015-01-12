@@ -91,8 +91,8 @@ function eastBlue_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary', __( 'Navigation Menu', 'eastBlue' ),
-			'topbar', __( 'Topbar Menu', 'eastBlue' )
+			'primary' => __( 'Header Menu', 'eastBlue' ),
+			'topbar' => __( 'Topbar Menu', 'eastBlue' )
 		)
 	);
 

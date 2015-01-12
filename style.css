@@ -640,6 +640,18 @@ input[type="reset"]:active {
 	color: #7d7b6d;
 }
 
+/**
+main framwork
+**/
+.topbar{
+	height: 48px;
+	line-height: 48px;
+}
+.main-content{
+	margin: 0 auto;
+	width: 960px;
+}
+
 /*
  * Responsive images
  *
