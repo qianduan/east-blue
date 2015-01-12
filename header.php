@@ -33,7 +33,7 @@
 <body <?php body_class(); ?>>
 	<div class="topbar">
 		<div class="main-content">
-			
+			<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'nav-top' ) ); ?>
 		</div>
 	</div>
 	<header class="header" role="banner">
@@ -49,6 +49,6 @@
 		</nav><!-- #site-navigation -->
 	</header>
 	<div id="page" class="hfeed site">
-	
+
 
 		<div id="main" class="site-main">

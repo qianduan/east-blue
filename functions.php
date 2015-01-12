@@ -61,13 +61,13 @@ function eastBlue_setup() {
 	 * replace to change 'eastBlue' to the name of your theme in all
 	 * template files.
 	 */
-	load_theme_textdomain( 'eastBlue', get_template_directory() . '/languages' );
+	//load_theme_textdomain( 'eastBlue', get_template_directory() . '/languages' );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', eastBlue_fonts_url() ) );
+	//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', eastBlue_fonts_url() ) );
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -89,7 +89,12 @@ function eastBlue_setup() {
 	) );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Navigation Menu', 'eastBlue' ) );
+	register_nav_menus(
+		array(
+			'primary', __( 'Navigation Menu', 'eastBlue' ),
+			'topbar', __( 'Topbar Menu', 'eastBlue' )
+		)
+	);
 
 	/*
 	 * This theme uses a custom image size for featured images, displayed on
