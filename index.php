@@ -13,26 +13,23 @@
  * @subpackage East_Blue
  * @since East Blue 1.0
  */
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-		<?php if ( have_posts() ) : ?>
+	<div id="content" class="main-content" role="main">
+	<?php if ( have_posts() ) : ?>
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+		<?php /* The loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php endwhile; ?>
 
-			<?php eastBlue_paging_nav(); ?>
+		<?php eastBlue_paging_nav(); ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+	<?php else : ?>
+		<?php get_template_part( 'content', 'none' ); ?>
+	<?php endif; ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	</div><!-- #content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

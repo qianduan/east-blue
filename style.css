@@ -614,7 +614,13 @@ logo
 	display: none;
 }
 
+/**
+main content
+**/
 
+.content{
+	background-color: #ECF0F1;
+}
 /*
  * Responsive images
  *
