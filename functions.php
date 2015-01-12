@@ -165,10 +165,7 @@ function eastBlue_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-	// Adds Masonry to handle vertical alignment of footer widgets.
-	if ( is_active_sidebar( 'sidebar-1' ) )
-		wp_enqueue_script( 'jquery-masonry' );
-
+	
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
 	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
 
@@ -223,8 +220,8 @@ add_filter( 'wp_title', 'eastBlue_wp_title', 10, 2 );
 function eastBlue_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Main Widget Area', 'eastBlue' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears in the footer section of the site.', 'eastBlue' ),
+		'id'            => 'sidebar-main',
+		'description'   => __( 'Appears in the aside of the site.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -233,8 +230,28 @@ function eastBlue_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears on posts and pages in the sidebar.', 'eastBlue' ),
+		'id'            => 'sidebar-left',
+		'description'   => __( 'Appears on posts and pages in the bottom left.', 'eastBlue' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
+		'id'            => 'sidebar-middle',
+		'description'   => __( 'Appears on posts and pages in the bottom middle.', 'eastBlue' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
+		'id'            => 'sidebar-right',
+		'description'   => __( 'Appears on posts and pages in the bottom right.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',

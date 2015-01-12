@@ -15,20 +15,18 @@
  */
 get_header(); ?>
 
-	<div id="content" class="main-content" role="main">
-	<?php if ( have_posts() ) : ?>
-
-		<?php /* The loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
-		<?php endwhile; ?>
-
-		<?php eastBlue_paging_nav(); ?>
-
-	<?php else : ?>
-		<?php get_template_part( 'content', 'none' ); ?>
-	<?php endif; ?>
-
+	<div id="content" class="inner">
+		<div class="content"  role="main">
+		<?php if ( have_posts() ) : ?>
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+			<?php eastBlue_paging_nav(); ?>
+		<?php else : ?>
+			<?php get_template_part( 'content', 'none' ); ?>
+		<?php endif; ?>
+		</div>
 	</div><!-- #content -->
 
 <?php get_sidebar(); ?>

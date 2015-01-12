@@ -563,7 +563,7 @@ main framwork
 	right: 0;
 }
 
-.main-content{
+.inner{
 	margin: 0 auto;
 	width: 960px;
 	position: relative;
@@ -621,6 +621,8 @@ main content
 .content{
 	background-color: #ECF0F1;
 }
+
+
 /*
  * Responsive images
  *
