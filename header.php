@@ -48,4 +48,4 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header>
-	<div id="main" class="content">
+	<div id="main" class="body">
