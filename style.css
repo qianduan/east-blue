@@ -81,12 +81,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	font-size: 36px;
+	font-size: 32px;
 	margin: 18px 0;
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 28px;
 	margin: 14px 0;
 }
 
@@ -502,10 +502,10 @@ icon font
 .icon-angle-right:before { content: '\e801'; } /* '' */
 .icon-arrow-up:before { content: '\e802'; } /* '' */
 .icon-bars:before { content: '\e803'; } /* '' */
-.icon-clock-o:before { content: '\e804'; } /* '' */
+.icon-date:before { content: '\e804'; } /* '' */
 .icon-comment:before { content: '\e805'; } /* '' */
 .icon-css3:before { content: '\e806'; } /* '' */
-.icon-folder:before { content: '\e807'; } /* '' */
+.icon-cat:before { content: '\e807'; } /* '' */
 .icon-html5:before { content: '\e808'; } /* '' */
 .icon-search:before { content: '\e809'; } /* '' */
 .icon-share-alt:before { content: '\e80a'; } /* '' */
@@ -581,6 +581,7 @@ logo
 **/
 .logo{
 	text-align: center;
+	font-size: 48px;
 }
 .logo a,.logo a:visited{
 	color: #2C3E50;
@@ -1046,7 +1047,6 @@ img.wp-smiley,
 	top: -1px;
 }
 
-.single-author .entry-meta .author,
 .sticky.format-standard .entry-meta .date
 {
 	display: none;
