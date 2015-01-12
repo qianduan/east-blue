@@ -621,12 +621,29 @@ main content
 .body{
 	background-color: #ECF0F1;
 }
-
+.content{
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	width: 640px;
+}
 /*
 article
 */
-.hentry{
+.article{
 	background-color: #fff;
+	margin: 20px 0 0;
+	padding:0;
+}
+
+/*
+main sidebar
+*/
+
+.sidebar-container{
+	width: 320px;
+	display: inline-block;
+	vertical-align: top;
 }
 /*
  * Responsive images
