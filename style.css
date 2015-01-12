@@ -13,49 +13,7 @@ Text Domain: qui
 This theme, like WordPress, is licensed under the MIT.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
-
-/**
- * Table of Contents:
- *
- * 1.0 - Reset
- * 2.0 - Repeatable Patterns
- * 3.0 - Basic Structure
- * 4.0 - Header
- *   4.1 - Site Header
- *   4.2 - Navigation
- * 5.0 - Content
- *   5.1 - Entry Header
- *   5.2 - Entry Meta
- *   5.3 - Entry Content
- *   5.4 - Galleries
- *   5.5 - Post Formats
- *   5.6 - Attachments
- *   5.7 - Post/Paging Navigation
- *   5.8 - Author Bio
- *   5.9 - Archives
- *   5.10 - Search Results/No posts
- *   5.11 - 404
- *   5.12 - Comments
- *   5.13 - Multisite
- * 6.0 - Sidebar
- *   6.1 - Widgets
- * 7.0 - Footer
- * 8.0 - Media Queries
- * 9.0 - Print
- * ----------------------------------------------------------------------------
- */
-
-
-/**
- * 1.0 Reset
- *
- * Modified from Normalize.css to provide cross-browser consistency and a smart
- * default styling of HTML elements.
- *
- * @see http://git.io/normalize
- * ----------------------------------------------------------------------------
- */
+/*reset*/
 
 * {
 	-webkit-box-sizing: border-box;
@@ -63,22 +21,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	box-sizing:         border-box;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-nav,
-section,
-summary {
+article,aside,details,figcaption,figure,footer,header,nav,section,summary {
 	display: block;
 }
 
-audio,
-canvas,
-video {
+audio,canvas,video {
 	display: inline-block;
 }
 
@@ -98,27 +45,24 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-html,
-button,
-input,
-select,
-textarea {
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+html,button,input,select,textarea {
+	font-family: "Helvetica neue",Helvetica,"lantinghei sc","Microsoft Yahei", sans-serif;
+	font-weight: 100;
 }
 
 body {
-	color: #141412;
-	line-height: 1.5;
+	color: #2C3E50;
+	line-height: 1.6;
 	margin: 0;
 }
 
 a {
-	color: #ca3c08;
+	color: #18BC9C;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #ac0404;
+	color: #18BC9C;
 }
 
 a:focus {
@@ -127,23 +71,13 @@ a:focus {
 
 a:active,
 a:hover {
-	color: #ea9629;
+	color: #18BC9C;
 	outline: 0;
-}
-
-a:hover {
 	text-decoration: underline;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
 	clear: both;
-	font-family: Bitter, Georgia, serif;
-	line-height: 1.3;
 }
 
 h1 {
@@ -185,8 +119,7 @@ abbr[title] {
 	border-bottom: 1px dotted;
 }
 
-b,
-strong {
+b,strong {
 	font-weight: bold;
 }
 
@@ -203,10 +136,7 @@ p {
 	margin: 0 0 24px;
 }
 
-code,
-kbd,
-pre,
-samp {
+code,kbd,pre,samp {
 	font-family: monospace, serif;
 	font-size: 14px;
 	-webkit-hyphens: none;
@@ -247,8 +177,7 @@ q:after {
 
 blockquote {
 	font-size: 18px;
-	font-style: italic;
-	font-weight: 300;
+	font-weight: 100;
 	margin: 24px 40px;
 }
 
@@ -358,36 +287,31 @@ legend {
 	white-space: normal;
 }
 
-button,
-input,
-select,
-textarea {
+button,input,select,textarea {
 	font-size: 100%;
 	margin: 0;
 	max-width: 100%;
 	vertical-align: baseline;
 }
 
-button,
-input {
+button,input,textarea {
+	color: #141412;
+	border: 2px solid #d4d0ba;
+	font-family: inherit;
+	padding: 5px;
 	line-height: normal;
 }
 
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
 }
 
-button[disabled],
-input[disabled] {
+button[disabled],input[disabled] {
 	cursor: default;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"],input[type="radio"] {
 	padding: 0;
 }
 
@@ -410,159 +334,6 @@ input::-moz-focus-inner {
 textarea {
 	overflow: auto;
 	vertical-align: top;
-}
-
-table {
-	border-bottom: 1px solid #ededed;
-	border-collapse: collapse;
-	border-spacing: 0;
-	font-size: 14px;
-	line-height: 2;
-	margin: 0 0 20px;
-	width: 100%;
-}
-
-caption,
-th,
-td {
-	font-weight: normal;
-	text-align: left;
-}
-
-caption {
-	font-size: 16px;
-	margin: 20px 0;
-}
-
-th {
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-td {
-	border-top: 1px solid #ededed;
-	padding: 6px 10px 6px 0;
-}
-
-del {
-	color: #333;
-}
-
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-hr {
-	background: url(images/dotted-line.png) repeat center top;
-	background-size: 4px 4px;
-	border: 0;
-	height: 1px;
-	margin: 0 0 24px;
-}
-
-/**
-icon font
-*/
-@font-face {
-  font-family: 'quicon';
-  src: url('font/quicon.eot?35356398');
-  src: url('font/quicon.eot?35356398#iefix') format('embedded-opentype'),
-       url('font/quicon.ttf?35356398') format('truetype'),
-       url('font/quicon.svg?35356398#quicon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
- 
- [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "quicon";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
- -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
- 
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-     
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
- 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
- 
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
- 
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
- 
-.icon-eye:before { content: '\e800'; } /* '' */
-.icon-angle-right:before { content: '\e801'; } /* '' */
-.icon-arrow-up:before { content: '\e802'; } /* '' */
-.icon-bars:before { content: '\e803'; } /* '' */
-.icon-clock-o:before { content: '\e804'; } /* '' */
-.icon-comment:before { content: '\e805'; } /* '' */
-.icon-css3:before { content: '\e806'; } /* '' */
-.icon-folder:before { content: '\e807'; } /* '' */
-.icon-html5:before { content: '\e808'; } /* '' */
-.icon-search:before { content: '\e809'; } /* '' */
-.icon-share-alt:before { content: '\e80a'; } /* '' */
-.icon-tag:before { content: '\e80b'; } /* '' */
-.icon-twitter:before { content: '\e80c'; } /* '' */
-.icon-angle-left:before { content: '\e80d'; } /* '' */
-.icon-weixin:before { content: '\e80e'; } /* '' */
-.icon-weibo:before { content: '\e80f'; } /* '' */
-.icon-user:before { content: '\e810'; } /* '' */
-
-
-
-/* Assistive text */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-}
-
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	text-decoration: none;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
-}
-
-/* Form fields, general styles first. */
-button,
-input,
-textarea {
-	border: 2px solid #d4d0ba;
-	font-family: inherit;
-	padding: 5px;
-}
-
-input,
-textarea {
-	color: #141412;
 }
 
 input:focus,
@@ -640,18 +411,170 @@ input[type="reset"]:active {
 	color: #7d7b6d;
 }
 
+table {
+	border-bottom: 1px solid #ededed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 14px;
+	line-height: 2;
+	margin: 0 0 20px;
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+caption {
+	font-size: 16px;
+	margin: 20px 0;
+}
+
+th {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+td {
+	border-top: 1px solid #ededed;
+	padding: 6px 10px 6px 0;
+}
+
+del {
+	color: #333;
+}
+
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	border: 0 dotted;
+	border-width: 1px 0 0;
+	height: 1px;
+	margin: 0 0 24px;
+}
+
+/**
+icon font
+*/
+@font-face {
+  font-family: 'quicon';
+  src: url('font/quicon.eot?35356398');
+  src: url('font/quicon.eot?35356398#iefix') format('embedded-opentype'),
+       url('font/quicon.ttf?35356398') format('truetype'),
+       url('font/quicon.svg?35356398#quicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "quicon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+}
+ 
+.icon-eye:before { content: '\e800'; } /* '' */
+.icon-angle-right:before { content: '\e801'; } /* '' */
+.icon-arrow-up:before { content: '\e802'; } /* '' */
+.icon-bars:before { content: '\e803'; } /* '' */
+.icon-clock-o:before { content: '\e804'; } /* '' */
+.icon-comment:before { content: '\e805'; } /* '' */
+.icon-css3:before { content: '\e806'; } /* '' */
+.icon-folder:before { content: '\e807'; } /* '' */
+.icon-html5:before { content: '\e808'; } /* '' */
+.icon-search:before { content: '\e809'; } /* '' */
+.icon-share-alt:before { content: '\e80a'; } /* '' */
+.icon-tag:before { content: '\e80b'; } /* '' */
+.icon-twitter:before { content: '\e80c'; } /* '' */
+.icon-angle-left:before { content: '\e80d'; } /* '' */
+.icon-weixin:before { content: '\e80e'; } /* '' */
+.icon-weibo:before { content: '\e80f'; } /* '' */
+.icon-user:before { content: '\e810'; } /* '' */
+
+
+
+/* Assistive text */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+
 /**
 main framwork
 **/
 .topbar{
 	height: 48px;
 	line-height: 48px;
+	background-color: #2C3E50;
 }
+.topbar a,.topbar a:visited {
+	color: #fff
+}
+.topbar .nav-top{
+	display: inline-block;
+	vertical-align: top;
+}
+.topbar .search-form{
+	float: right;
+}
+
 .main-content{
 	margin: 0 auto;
 	width: 960px;
 }
-
+.navigation{
+	text-align: center;
+}
+.page-item,.menu-item{
+	display: inline-block;
+	vertical-align: top;
+}
 /*
  * Responsive images
  *
@@ -844,31 +767,6 @@ img.wp-smiley,
 	margin: 0;
 }
 
-
-/**
- * 4.2 Navigation
- * ----------------------------------------------------------------------------
- */
-
-.main-navigation {
-	clear: both;
-	margin: 0 auto;
-	max-width: 1080px;
-	min-height: 45px;
-	position: relative;
-}
-
-ul.nav-menu,
-div.nav-menu > ul {
-	margin: 0;
-	padding: 0 40px 0 0;
-}
-
-.nav-menu li {
-	display: inline-block;
-	position: relative;
-}
-
 .nav-menu li a {
 	color: #141412;
 	display: block;
@@ -884,52 +782,6 @@ div.nav-menu > ul {
 .nav-menu li a:focus {
 	background-color: #220e10;
 	color: #fff;
-}
-
-.nav-menu .sub-menu,
-.nav-menu .children {
-	background-color: #220e10;
-	border: 2px solid #f7f5e7;
-	border-top: 0;
-	padding: 0;
-	position: absolute;
-	left: -2px;
-	z-index: 99999;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
-.nav-menu .sub-menu ul,
-.nav-menu .children ul {
-	border-left: 0;
-	left: 100%;
-	top: 0;
-}
-
-ul.nav-menu ul a,
-.nav-menu ul ul a {
-	color: #fff;
-	margin: 0;
-	width: 200px;
-}
-
-ul.nav-menu ul a:hover,
-.nav-menu ul ul a:hover,
-ul.nav-menu ul a:focus,
-.nav-menu ul ul a:focus {
-	background-color: #db572f;
-}
-
-ul.nav-menu li:hover > ul,
-.nav-menu ul li:hover > ul,
-ul.nav-menu .focus > ul,
-.nav-menu .focus > ul {
-	clip: inherit;
-	overflow: inherit;
-	height: inherit;
-	width: inherit;
 }
 
 .nav-menu .current_page_item > a,
