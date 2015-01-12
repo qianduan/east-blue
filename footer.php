@@ -9,16 +9,21 @@
  * @since East Blue 1.0
  */
 ?>
-
-		</div><!-- #main -->
-		<footer id="colophon" class="site-footer" role="contentinfo">
+</div><!-- #main -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="secondary" class="sidebar-container" role="complementary">
+		<div class="sidebar-footer">
 			<?php get_sidebar( 'main' ); ?>
-			<div class="site-info">
-				<?php do_action( 'eastBlue_credits' ); ?>
-			</div><!-- .site-info -->
-		</footer><!-- #colophon -->
-	</div><!-- #page -->
-
+			<?php get_sidebar( 'footer' ); ?>
+			<?php get_sidebar( 'botoom' ); ?>
+		</div>
+	</div>
+		<div class="site-info">
+			<?php do_action( 'twentythirteen_credits' ); ?>
+			Powered by <a href="http://wordpress.org/">WordPress</a>, Host by <a href="http://www.linode.com/?r=d5156fa674d41bf96fbace51c9fade505f6fd852">Linode VPS</a><br />
+	Copyright &copy; 2008-2014 前端观察 All rights reserved.
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
 	<?php wp_footer(); ?>
 </body>
 </html>

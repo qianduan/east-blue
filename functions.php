@@ -167,12 +167,6 @@ function eastBlue_scripts_styles() {
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
 	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
 
-	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
-	wp_enqueue_style( 'eastBlue-fonts', eastBlue_fonts_url(), array(), null );
-
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.03' );
-
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'eastBlue-style', get_stylesheet_uri(), array(), '2013-07-18' );
 
@@ -497,27 +491,10 @@ function eastBlue_body_class( $classes ) {
 	if ( is_active_sidebar( 'sidebar-2' ) && ! is_attachment() && ! is_404() )
 		$classes[] = 'sidebar';
 
-	if ( ! get_option( 'show_avatars' ) )
-		$classes[] = 'no-avatars';
-
 	return $classes;
 }
 add_filter( 'body_class', 'eastBlue_body_class' );
 
-/**
- * Adjust content_width value for video post formats and attachment templates.
- *
- * @since East Blue 1.0
- */
-function eastBlue_content_width() {
-	global $content_width;
-
-	if ( is_attachment() )
-		$content_width = 724;
-	elseif ( has_post_format( 'audio' ) )
-		$content_width = 484;
-}
-add_action( 'template_redirect', 'eastBlue_content_width' );
 
 /**
  * Add postMessage support for site title and description for the Customizer.
@@ -545,3 +522,25 @@ function eastBlue_customize_preview_js() {
 	wp_enqueue_script( 'eastBlue-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
 }
 add_action( 'customize_preview_init', 'eastBlue_customize_preview_js' );
+
+/*
+
+remove un used script
+
+*/
+function footer_enqueue_scripts() {
+   remove_action('wp_head', 'wp_print_scripts');
+    //remove_action('wp_head', 'wp_print_head_scripts', 9);
+    remove_action('wp_head', 'wp_enqueue_scripts',1);
+   add_action('wp_footer', 'wp_print_scripts', 5);
+    add_action('wp_footer', 'wp_enqueue_scripts', 1);
+    //add_action('wp_footer', 'wp_print_head_scripts', 5);
+}
+add_action('after_setup_theme', 'footer_enqueue_scripts');
+
+function rccoder_get_avatar($avatar) {
+$avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),
+"gravatar.duoshuo.com",$avatar);
+return $avatar;
+}
+add_filter( 'get_avatar', 'rccoder_get_avatar', 10, 3 );
