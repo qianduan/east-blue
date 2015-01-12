@@ -53,35 +53,12 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) )
  * @since East Blue 1.0
  */
 function eastBlue_setup() {
-	/*
-	 * Makes Twenty Thirteen available for translation.
-	 *
-	 * Translations can be added to the /languages/ directory.
-	 * If you're building a theme based on Twenty Thirteen, use a find and
-	 * replace to change 'eastBlue' to the name of your theme in all
-	 * template files.
-	 */
-	//load_theme_textdomain( 'eastBlue', get_template_directory() . '/languages' );
-
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', eastBlue_fonts_url() ) );
-
-	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Switches default core markup for search form, comment form,
-	 * and comments to output valid HTML5.
-	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
-
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'primary' => __( 'Header Menu', 'eastBlue' ),
@@ -322,9 +299,19 @@ if ( ! function_exists( 'eastBlue_entry_meta' ) ) :
  * @since East Blue 1.0
  */
 function eastBlue_entry_meta() {
+	//  Sticky post
 	if ( is_sticky() && is_home() && ! is_paged() )
 		echo '<span class="featured-post">' . __( 'Sticky', 'eastBlue' ) . '</span>';
-
+	
+	// Post author
+	if ( 'post' == get_post_type() ) {
+		printf( '<span class="icon-user author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( __( '查看%s的所有文章', 'eastBlue' ), get_the_author() ) ),
+			get_the_author()
+		);
+	}
+	
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'eastBlue' ) );
 	if ( $categories_list ) {
@@ -337,14 +324,9 @@ function eastBlue_entry_meta() {
 		echo '<span class="icon-tag">' . $tag_list . '</span>';
 	}
 
-	// Post author
-	if ( 'post' == get_post_type() ) {
-		printf( '<span class="icon-user author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( '查看%s的所有文章', 'eastBlue' ), get_the_author() ) ),
-			get_the_author()
-		);
-	}
+	if ( comments_open() && ! is_single() ) : 
+	comments_popup_link( '<span class="icon-comment">' . __( '评论一下', 'eastBlue' ) . '</span>', __( '一条评论', 'eastBlue' ), __( '%条评论', 'eastBlue' ) ); ?>
+	endif; // comments_open() 
 }
 endif;
 

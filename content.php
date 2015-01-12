@@ -51,12 +51,6 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( comments_open() && ! is_single() ) : ?>
-			<div class="comments-link">
-				<?php comments_popup_link( '<span class="icon-comment">' . __( '评论一下', 'eastBlue' ) . '</span>', __( '一条评论', 'eastBlue' ), __( '%条评论', 'eastBlue' ) ); ?>
-			</div><!-- .comments-link -->
-		<?php endif; // comments_open() ?>
-
 		<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 			<?php get_template_part( 'author-bio' ); ?>
 		<?php endif; ?>
