@@ -27,7 +27,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 		</div>
-	</div><!-- #content -->
+	
 
 <?php get_sidebar(); ?>
+</div><!-- #content -->
 <?php get_footer(); ?>

@@ -34,7 +34,7 @@
 <header class="header" role="banner">
 	<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'eastBlue' ); ?>"><?php _e( 'Skip to content', 'eastBlue' ); ?></a>
 		<div class="topbar">
-			<div class="main-content">
+			<div class="inner">
 				<nav class="nav-top">
 				<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'top-menu' ) ); ?>
 				</nav>
