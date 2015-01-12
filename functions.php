@@ -222,7 +222,7 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
+		'name'          => __( 'Bottom Left Widget', 'eastBlue' ),
 		'id'            => 'sidebar-left',
 		'description'   => __( 'Appears on posts and pages in the bottom left.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -232,7 +232,7 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
+		'name'          => __( 'Bottom Middle Widget', 'eastBlue' ),
 		'id'            => 'sidebar-middle',
 		'description'   => __( 'Appears on posts and pages in the bottom middle.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -242,7 +242,7 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Secondary Widget Area', 'eastBlue' ),
+		'name'          => __( 'Bottom Right Widget', 'eastBlue' ),
 		'id'            => 'sidebar-right',
 		'description'   => __( 'Appears on posts and pages in the bottom right.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
