@@ -160,13 +160,13 @@ function eastBlue_scripts_styles() {
 
 	
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
-	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
+	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2015-01-08', true );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'eastBlue-style', get_stylesheet_uri(), array(), '2013-07-18' );
+	// wp_enqueue_style( 'eastBlue-style', get_stylesheet_uri(), array(), '2013-07-18' );
 
 	// Loads the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'eastBlue-ie', get_template_directory_uri() . '/css/ie.css', array( 'eastBlue-style' ), '2013-07-18' );
+	wp_enqueue_style( 'eastBlue-ie', get_template_directory_uri() . '/css/ie.css', array( 'eastBlue-style' ), '2015-01-18' );
 	wp_style_add_data( 'eastBlue-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'eastBlue_scripts_styles' );
@@ -362,7 +362,7 @@ if ( ! function_exists( 'eastBlue_entry_date' ) ) :
 function eastBlue_entry_date( $echo = true ) {
 	$format_prefix = '%2$s';
 
-	$date = sprintf( '<span class="date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
+	$date = sprintf( '<span class="icon-date date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( sprintf( __( 'Permalink to %s', 'eastBlue' ), the_title_attribute( 'echo=0' ) ) ),
 		esc_attr( get_the_date( 'c' ) ),
