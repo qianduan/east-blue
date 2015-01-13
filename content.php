@@ -41,6 +41,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="article-content">
+		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100topright.jpg" alt=""></a></div>
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
@@ -50,9 +51,9 @@
 
 			wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
 		?>
+		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100top.jpg" alt=""></a></div>
 	</div><!-- .article-content -->
 	<?php endif; ?>
-
 	<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
 		<footer class="article-meta">
 			<?php get_template_part( 'author-bio' ); ?>

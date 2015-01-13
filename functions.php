@@ -196,19 +196,21 @@ function eastBlue_paging_nav() {
 		return;
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'eastBlue' ); ?></h1>
+		<div class="screen-reader-text"><?php _e( '文章分页', 'eastBlue' ); ?></div>
 		<div class="nav-links">
+			<?php
+			$big = 999999999; // need an unlikely integer
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'eastBlue' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'eastBlue' ) ); ?></div>
-			<?php endif; ?>
-
+			echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages
+			) );
+			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
+
 	<?php
 }
 endif;
@@ -230,13 +232,9 @@ function eastBlue_post_nav() {
 		return;
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'eastBlue' ); ?></h1>
-		<div class="nav-links">
-
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'eastBlue' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'eastBlue' ) ); ?>
-
-		</div><!-- .nav-links -->
+		<h1 class="screen-reader-text"><?php _e( '文章导航', 'eastBlue' ); ?></h1>
+			<?php previous_post_link( '%link', _x( '<span class="icon-angle-left"></span>', 'Previous post link', 'eastBlue' ) ); ?>
+			<?php next_post_link( '%link', _x( '<span class="icon-angle-right"></span>', 'Next post link', 'eastBlue' ) ); ?>
 	</nav><!-- .navigation -->
 	<?php
 }
@@ -385,33 +383,6 @@ endif;
  *
  * @return string The Link format URL.
  */
-function eastBlue_get_link_url() {
-	$content = get_the_content();
-	$has_url = get_url_in_content( $content );
-
-	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
-}
-
-if ( ! function_exists( 'eastBlue_excerpt_more' ) && ! is_admin() ) :
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ...
- * and a Continue reading link.
- *
- * @since Twenty Thirteen 1.4
- *
- * @param string $more Default Read More excerpt link.
- * @return string Filtered Read More excerpt link.
- */
-function eastBlue_excerpt_more( $more ) {
-	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-		esc_url( get_permalink( get_the_ID() ) ),
-			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'eastBlue' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
-		);
-	return ' &hellip; ' . $link;
-}
-add_filter( 'excerpt_more', 'eastBlue_excerpt_more' );
-endif;
 
 /**
  * Extend the default WordPress body classes.

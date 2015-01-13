@@ -770,6 +770,9 @@ main sidebar
 .give-me-five{
 	text-align: center;
 }
+.give-me-five img{
+	max-width: 100%;
+}
 /*
  * Responsive images
  *
@@ -994,16 +997,8 @@ footer.article-meta {
  * ----------------------------------------------------------------------------
  */
 
-.navigation .nav-previous {
-	float: left;
-}
-
-.navigation .nav-next {
-	float: right;
-}
 
 .paging-navigation {
-	background-color: #e8e5ce;
 	padding: 40px 0;
 }
 
@@ -1011,65 +1006,43 @@ footer.article-meta {
 	margin: 0 auto;
 /*	max-width: 604px;*/
 	width: 100%;
+	font-size: 0;
+	line-height: 1;
+	color: #fff
 }
-
-.sidebar .paging-navigation .nav-links {
-	max-width: 1040px;
-	padding: 0 376px 0 60px;
+.paging-navigation .page-numbers{
+	background-color: #18bc9c;
+	padding: 10px 15px;
+	display: inline-block;
+	font-size: 22px;
 }
-
-.paging-navigation .nav-next {
-	padding: 13px 0;
+.paging-navigation .current{
+	background-color: #3be6c4;
+	cursor: not-allowed
 }
 
 .paging-navigation a {
-	font-size: 22px;
-	font-style: italic;
-	font-weight: 300;
-}
-
-.paging-navigation .meta-nav {
-	background-color: #e63f2a;
-	border-radius: 50%;
-	color: #fff;
-	display: inline-block;
-	font-size: 26px;
-	padding: 3px 0 8px;
-	text-align: center;
-	width: 50px;
-}
-
-.paging-navigation .nav-previous .meta-nav {
-	margin-right: 10px;
-	padding: 17px 0 23px;
-	width: 80px;
-}
-
-.paging-navigation .nav-next .meta-nav {
-	margin-left: 10px;
-}
-
-.paging-navigation a:hover .meta-nav {
-	background-color: #ea9629;
-	text-decoration: none;
+	color: #fff
 }
 
 .post-navigation {
 	background-color: #fff;
-	color: #ca3c08;
-	font-size: 20px;
-	font-style: italic;
-	font-weight: 300;
-	padding: 20px 0;
-}
-
-.post-navigation .nav-links {
+	padding: 0 20px 20px;
 	margin: 0 auto;
-	max-width: 1040px;
+	
+	text-align: left;
 }
 
-.sidebar .post-navigation .nav-links {
-	padding: 0 376px 0 60px;
+.post-navigation a{
+	display: inline-block;
+	vertical-align: top;
+	padding:2px 20px;
+	line-height: 1;
+	background-color: #18bc9c;
+	border: 1px solid transparent;
+	border-radius: 50px;
+	color: #fff;
+	font-size: 32px;
 }
 
 .post-navigation a[rel="next"] {
