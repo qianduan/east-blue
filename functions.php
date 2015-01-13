@@ -28,8 +28,8 @@
  *
  * @see eastBlue_content_width() for template-specific adjustments.
  */
-if ( ! isset( $content_width ) )
-	$content_width = 604;
+// if ( ! isset( $content_width ) )
+// 	$content_width = 604;
 
 /**
  * Twenty Thirteen only works in WordPress 3.6 or later.
@@ -71,7 +71,7 @@ function eastBlue_setup() {
 	 * "standard" posts and pages.
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 604, 270, true );
+	set_post_thumbnail_size( 620, 150, true );
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );

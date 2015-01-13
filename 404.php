@@ -13,13 +13,13 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<header class="page-header">
-				<h1 class="page-title"><?php _e( 'Not Found', 'eastBlue' ); ?></h1>
+				<h1 class="page-title"><?php _e( '什么都没有', 'eastBlue' ); ?></h1>
 			</header>
 
 			<div class="page-wrapper">
 				<div class="page-content">
-					<h2><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'eastBlue' ); ?></h2>
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'eastBlue' ); ?></p>
+					<h2><?php _e( '囧', 'eastBlue' ); ?></h2>
+					<p><?php _e( '但是你要访问的内容真的不在这里啊，不如搜索下试试？', 'eastBlue' ); ?></p>
 
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->
