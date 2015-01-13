@@ -8,11 +8,11 @@
  * @subpackage East_Blue
  * @since East Blue 1.0
  */
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<div id="content" class="inner">
+		<div class="content"  role="main">
+		
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 				<header class="article-header">
 					<h1 class="article-titlee"><?php the_title(); ?></h1>

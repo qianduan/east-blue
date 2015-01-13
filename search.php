@@ -9,13 +9,12 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+	<div id="content" class="inner">
+		<div class="content"  role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'eastBlue' ), get_search_query() ); ?></h1>
+				<h1 class="page-title"><?php printf( __( '搜索结果: %s', 'eastBlue' ), get_search_query() ); ?></h1>
 			</header>
 
 			<?php /* The loop */ ?>
@@ -28,9 +27,6 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		</div><?php get_sidebar(); ?>
+</div><!-- #content -->
 <?php get_footer(); ?>

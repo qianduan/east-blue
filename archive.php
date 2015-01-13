@@ -19,20 +19,19 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+	<div id="content" class="inner">
+		<div class="content"  role="main">
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php
 					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'eastBlue' ), get_the_date() );
+						printf( __( '按日归档: %s', 'eastBlue' ), get_the_date() );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'eastBlue' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'eastBlue' ) ) );
+						printf( __( '按月归档: %s', 'eastBlue' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'eastBlue' ) ) );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'eastBlue' ), get_the_date( _x( 'Y', 'yearly archives date format', 'eastBlue' ) ) );
+						printf( __( '按年归档: %s', 'eastBlue' ), get_the_date( _x( 'Y', 'yearly archives date format', 'eastBlue' ) ) );
 					else :
-						_e( 'Archives', 'eastBlue' );
+						_e( '归档', 'eastBlue' );
 					endif;
 				?></h1>
 			</header><!-- .archive-header -->
@@ -47,9 +46,6 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		</div><?php get_sidebar(); ?>
+</div><!-- #content -->
 <?php get_footer(); ?>

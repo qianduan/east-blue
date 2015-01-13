@@ -11,9 +11,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+	<div id="content" class="inner">
+		<div class="content"  role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -28,7 +27,7 @@ get_header(); ?>
 			?>
 
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'All posts by %s', 'eastBlue' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( '%s的所有文章', 'eastBlue' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
 			</header><!-- .archive-header -->
 
 			<?php
@@ -54,9 +53,6 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		</div><?php get_sidebar(); ?>
+</div><!-- #content -->
 <?php get_footer(); ?>

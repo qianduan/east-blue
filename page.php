@@ -19,14 +19,13 @@ get_header(); ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="article-header">
-						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+<article id="post-<?php the_ID(); ?>" class="article">
+<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 						<div class="article-thumbnail">
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-
+					<header class="article-header">
 						<h1 class="article-titlee"><?php the_title(); ?></h1>
 					</header><!-- .article-header -->
 
@@ -43,8 +42,8 @@ get_header(); ?>
 				<?php comments_template(); ?>
 			<?php endwhile; ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	</div><?php get_sidebar(); ?>
+</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

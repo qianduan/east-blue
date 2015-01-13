@@ -78,49 +78,7 @@ function eastBlue_setup() {
 }
 add_action( 'after_setup_theme', 'eastBlue_setup' );
 
-/**
- * Return the Google font stylesheet URL, if available.
- *
- * The use of Source Sans Pro and Bitter by default is localized. For languages
- * that use characters not supported by the font, the font can be disabled.
- *
- * @since East Blue 1.0
- *
- * @return string Font stylesheet or empty string if disabled.
- */
-function eastBlue_fonts_url() {
-	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
-	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'eastBlue' );
-
-	/* Translators: If there are characters in your language that are not
-	 * supported by Bitter, translate this to 'off'. Do not translate into your
-	 * own language.
-	 */
-	$bitter = _x( 'on', 'Bitter font: on or off', 'eastBlue' );
-
-	if ( 'off' !== $source_sans_pro || 'off' !== $bitter ) {
-		$font_families = array();
-
-		if ( 'off' !== $source_sans_pro )
-			$font_families[] = 'Source Sans Pro:300,400,700,300italic,400italic,700italic';
-
-		if ( 'off' !== $bitter )
-			$font_families[] = 'Bitter:400,700';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
-	}
-
-	return $fonts_url;
-}
 
 /**
  * Enqueue scripts and styles for the front end.
@@ -183,8 +141,8 @@ add_filter( 'wp_title', 'eastBlue_wp_title', 10, 2 );
  */
 function eastBlue_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'eastBlue' ),
-		'id'            => 'sidebar-main',
+		'name'          => __( '侧边', 'eastBlue' ),
+		'id'            => 'sidebar-1',
 		'description'   => __( 'Appears in the aside of the site.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -193,8 +151,8 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Bottom Left Widget', 'eastBlue' ),
-		'id'            => 'sidebar-left',
+		'name'          => __( '底部左边', 'eastBlue' ),
+		'id'            => 'sidebar-2',
 		'description'   => __( 'Appears on posts and pages in the bottom left.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -203,8 +161,8 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Bottom Middle Widget', 'eastBlue' ),
-		'id'            => 'sidebar-middle',
+		'name'          => __( '底部中间', 'eastBlue' ),
+		'id'            => 'sidebar-3',
 		'description'   => __( 'Appears on posts and pages in the bottom middle.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -213,8 +171,8 @@ function eastBlue_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Bottom Right Widget', 'eastBlue' ),
-		'id'            => 'sidebar-right',
+		'name'          => __( '底部右边', 'eastBlue' ),
+		'id'            => 'sidebar-4',
 		'description'   => __( 'Appears on posts and pages in the bottom right.', 'eastBlue' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

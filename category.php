@@ -11,12 +11,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+	<div id="content" class="inner">
+		<div class="content"  role="main">
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'eastBlue' ), single_cat_title( '', false ) ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( '分类: %s', 'eastBlue' ), single_cat_title( '', false ) ); ?></h1>
 
 				<?php if ( category_description() ) : // Show an optional category description ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
@@ -33,9 +32,6 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		</div><?php get_sidebar(); ?>
+</div><!-- #content -->
 <?php get_footer(); ?>
