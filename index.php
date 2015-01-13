@@ -26,6 +26,6 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-		</div><?php get_sidebar("sidebar-main"); ?>
+		</div><?php get_sidebar(); ?>
 </div><!-- #content -->
 <?php get_footer(); ?>

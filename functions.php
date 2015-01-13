@@ -139,12 +139,6 @@ function eastBlue_scripts_styles() {
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
 	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2015-01-08', true );
 
-	// Loads our main stylesheet.
-	// wp_enqueue_style( 'eastBlue-style', get_stylesheet_uri(), array(), '2013-07-18' );
-
-	// Loads the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'eastBlue-ie', get_template_directory_uri() . '/css/ie.css', array( 'eastBlue-style' ), '2015-01-18' );
-	wp_style_add_data( 'eastBlue-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'eastBlue_scripts_styles' );
 
@@ -311,7 +305,9 @@ function eastBlue_entry_meta() {
 			get_the_author()
 		);
 	}
-	
+	// post time
+	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
+		eastBlue_entry_date();
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'eastBlue' ) );
 	if ( $categories_list ) {
@@ -320,7 +316,7 @@ function eastBlue_entry_meta() {
 
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'eastBlue' ) );
-	if ( $tag_list ) {
+	if (  is_single() && $tag_list ) {
 		echo '<span class="icon-tag">' . $tag_list . '</span>';
 	}
 
@@ -341,11 +337,11 @@ if ( ! function_exists( 'eastBlue_entry_date' ) ) :
 function eastBlue_entry_date( $echo = true ) {
 	$format_prefix = '%2$s';
 
-	$date = sprintf( '<span class="icon-date date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
+	$date = sprintf( '<span class="icon-date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
-		esc_attr( sprintf( __( 'Permalink to %s', 'eastBlue' ), the_title_attribute( 'echo=0' ) ) ),
+		esc_attr( sprintf( __( 'Permalink to %s', 'twentythirteen' ), the_title_attribute( 'echo=0' ) ) ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( sprintf( $format_prefix, get_the_date() ) )
+		esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
 	);
 
 	if ( $echo )

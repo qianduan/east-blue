@@ -20,24 +20,24 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
+					<header class="article-header">
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-						<div class="entry-thumbnail">
+						<div class="article-thumbnail">
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
 
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header><!-- .entry-header -->
+						<h1 class="article-titlee"><?php the_title(); ?></h1>
+					</header><!-- .article-header -->
 
-					<div class="entry-content">
+					<div class="article-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
-					</div><!-- .entry-content -->
+					</div><!-- .article-content -->
 
-					<footer class="entry-meta">
+					<footer class="article-meta">
 						<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="edit-link">', '</span>' ); ?>
-					</footer><!-- .entry-meta -->
+					</footer><!-- .article-meta -->
 				</article><!-- #post -->
 
 				<?php comments_template(); ?>

@@ -14,10 +14,10 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+				<header class="article-header">
+					<h1 class="article-titlee"><?php the_title(); ?></h1>
 
-					<div class="entry-meta">
+					<div class="article-meta">
 						<?php
 							$published_text = __( '<span class="attachment-meta">Published on <time class="entry-date" datetime="%1$s">%2$s</time> in <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a></span>', 'eastBlue' );
 							$post_title = get_the_title( $post->post_parent );
@@ -43,10 +43,10 @@ get_header(); ?>
 
 							edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="edit-link">', '</span>' );
 						?>
-					</div><!-- .entry-meta -->
-				</header><!-- .entry-header -->
+					</div><!-- .article-meta -->
+				</header><!-- .article-header -->
 
-				<div class="entry-content">
+				<div class="article-content">
 					<nav id="image-navigation" class="navigation image-navigation" role="navigation">
 						<span class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'eastBlue' ) ); ?></span>
 						<span class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'eastBlue' ) ); ?></span>
@@ -71,7 +71,7 @@ get_header(); ?>
 					</div><!-- .entry-description -->
 					<?php endif; ?>
 
-				</div><!-- .entry-content -->
+				</div><!-- .article-content -->
 			</article><!-- #post -->
 
 			<?php comments_template(); ?>

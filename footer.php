@@ -13,9 +13,9 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div id="secondary" class="sidebar-container" role="complementary">
 		<div class="sidebar-footer">
-			<?php get_sidebar( 'sidebar-left' ); ?>
-			<?php get_sidebar( 'sidebar-middle' ); ?>
-			<?php get_sidebar( 'sidebar-right' ); ?>
+			<?php get_sidebar('left'); ?>
+			<?php get_sidebar('middle'); ?>
+			<?php get_sidebar('right'); ?>
 		</div>
 	</div>
 		<div class="site-info">
