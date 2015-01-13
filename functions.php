@@ -429,10 +429,7 @@ endif;
 function eastBlue_body_class( $classes ) {
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
-
-	if ( is_active_sidebar( 'sidebar-2' ) && ! is_attachment() && ! is_404() )
-		$classes[] = 'sidebar';
-
+	// todo add os-class
 	return $classes;
 }
 add_filter( 'body_class', 'eastBlue_body_class' );

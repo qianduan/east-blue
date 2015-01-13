@@ -686,6 +686,7 @@ main content
 
 .body{
 	background-color: #ECF0F1;
+	padding-bottom: 40px;
 }
 .content{
 	overflow: hidden;
@@ -1438,66 +1439,36 @@ footer.article-meta {
  * ----------------------------------------------------------------------------
  */
 
-.site-footer {
-	background-color: #e8e5ce;
-	color: #686758;
+.footer {
+	background-color: #2C3E50;
 	font-size: 14px;
 	text-align: center;
 }
 
-.site-footer .widget-area,
-.sidebar .site-footer {
+.footer .widget-area{
 	text-align: left;
-}
-
-.site-footer a {
-	color: #686758;
-}
-
-.site-footer .sidebar-container {
-	background-color: #220e10;
-	padding: 20px 0;
-}
-
-.site-footer .widget-area {
+	color: #fff;
 	margin: 0 auto;
 	max-width: 1040px;
 	width: 100%;
 }
 
-.sidebar .site-footer .widget-area {
-	max-width: 724px;
-	position: relative;
-	left: -158px;
-}
-
-.site-footer .widget {
+.footer .widget {
 	background: transparent;
 	color: #fff;
 	float: left;
-	margin-right: 20px;
-	width: 245px;
+	width: 320px;
 }
 
-.sidebar .site-footer .widget {
-	width: 228px;
+.footer .widget-title {
+	border-bottom-width: 0
 }
-
-.sidebar .site-footer .widget:nth-of-type(4),
-.sidebar .site-footer .widget:nth-of-type(3) {
-	margin-right: 0;
+.footer-copyright{
+	background-color: #ECF0F1;
+	clear: both;
+	text-align: left;
+	padding: 20px 0;
 }
-
-.site-footer .widget a {
-	color: #e6402a;
-}
-
-.site-footer .widget-title,
-.site-footer .widget-title a,
-.site-footer .wp-caption-text {
-	color: #fff;
-}
-
 .search-form .search-submit{
 	display: none;
 }
@@ -1611,7 +1582,7 @@ footer.article-meta {
 	}
 
 	.author-avatar,
-	.site-footer,
+	.footer,
 	.comment-respond,
 	.comments-area .comment-edit-link,
 	.comments-area .reply,
