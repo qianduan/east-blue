@@ -34,9 +34,10 @@
 		</div><!-- .article-meta -->
 	</header><!-- .article-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-	<div class="entry-summary">
+	<?php if ( !is_single() ) : // Only display Excerpts for Search ?>
+	<div class="article-summary">
 		<?php the_excerpt(); ?>
+		<p><a href="<?php the_permalink() ?>" title="查看 <?php the_title(); ?> 的全部内容" class="btn btn-warning btn-read-all">阅读全文 &#187;</a></p>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="article-content">
