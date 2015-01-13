@@ -54,7 +54,7 @@
 		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100top.jpg" alt=""></a></div>
 	</div><!-- .article-content -->
 	<?php endif; ?>
-	<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
+	<?php if ( is_single() && get_the_author_meta( 'description' ) ) : ?>
 		<footer class="article-meta">
 			<?php get_template_part( 'author-bio' ); ?>
 		</footer><!-- .article-meta -->
