@@ -11,7 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="article">
-	<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
+	<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment()&& ! is_single() ) : ?>
 	<div class="article-thumbnail">
 		<?php the_post_thumbnail(); ?>
 	</div>
