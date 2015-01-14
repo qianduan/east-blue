@@ -17,14 +17,9 @@
 		</div>
 	<?php endif; ?>
 	<header class="article-header">
-		<?php if ( is_single() ) : ?>
-		<h1 class="article-titlee"><?php the_title(); ?></h1>
-		<?php else : ?>
-		<h1 class="article-titlee">
+		<h1 class="article-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
-		<?php endif; // is_single() ?>
-
 		<div class="article-meta">
 			<?php eastBlue_entry_meta(); ?>
 		<?php if ( comments_open() && ! is_single() ) : ?>

@@ -76,7 +76,11 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 				<?php get_search_form(); ?>
 			</div>
 		</div>
+	<?php if ( is_single() || is_page()) : ?>
+		<h2 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+	<?php else : ?>
 		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php endif; ?>
 		<!-- 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
 		<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Menu', 'eastBlue' ); ?></button>
