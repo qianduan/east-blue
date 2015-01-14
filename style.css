@@ -771,7 +771,10 @@ main sidebar
 .widget li {
 	padding: 5px 0;
 }
-
+.widget-links li{
+	display: inline-block;
+	vertical-align: top;
+}
 .widget .children li:last-child {
 	padding-bottom: 0;
 }

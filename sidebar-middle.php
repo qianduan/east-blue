@@ -10,7 +10,7 @@
  */
 
 if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-<div class="widget-area">
+<div class="widget-area widget-links">
 		<?php dynamic_sidebar( 'sidebar-3' ); ?>
 </div>
 <?php endif; ?>
