@@ -12,7 +12,7 @@
 	 * Enables menu toggle for small screens.
 	 */
 	( function() {
-		var nav = $( '.main-navigation' ), menuButton,searchButton, menu, searchArea;
+		var nav = $( '.main-navigation' ), menuButton, searchButton, menu, searchArea;
 		if ( ! nav ) {
 			return;
 		}
@@ -55,7 +55,7 @@
 	} );
 
 
-	(function () {
+	( function () {
 		var topBtn=jQuery(".backToTop");
 		topBtn.hide();
 		jQuery(window).scroll(function(){
