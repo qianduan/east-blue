@@ -9,33 +9,20 @@
 	    _window = $( window );
 
 	/**
-	 * Adds a top margin to the footer if the sidebar widget area is higher
-	 * than the rest of the page, to help the footer always visually clear
-	 * the sidebar.
-	 */
-	$( function() {
-		if ( body.is( '.sidebar' ) ) {
-			var sidebar   = $( '#secondary .widget-area' ),
-			    secondary = ( 0 === sidebar.length ) ? -40 : sidebar.height(),
-			    margin    = $( '#tertiary .widget-area' ).height() - $( '#content' ).height() - secondary;
-
-			if ( margin > 0 && _window.innerWidth() > 999 ) {
-				$( '#colophon' ).css( 'margin-top', margin + 'px' );
-			}
-		}
-	} );
-
-	/**
 	 * Enables menu toggle for small screens.
 	 */
 	( function() {
-		var nav = $( '#site-navigation' ), button, menu;
+		var nav = $( '.main-navigation' ), menuButton,searchButton, menu, searchArea;
 		if ( ! nav ) {
 			return;
 		}
-
-		button = nav.find( '.menu-toggle' );
-		if ( ! button ) {
+		var topbar = $('.header .topbar')
+		menuButton = topbar.find( '.icon-bars' );
+		if ( ! menuButton ) {
+			return;
+		}
+		searchButton = topbar.find( '.icon-search' );
+		if ( ! searchButton ) {
 			return;
 		}
 
@@ -45,27 +32,13 @@
 			button.hide();
 			return;
 		}
+		searchArea = topbar.find('.search-form');
 
-		button.on( 'click.eastBlue', function() {
+		menuButton.on( 'click.eastBlue', function() {
 			nav.toggleClass( 'toggled-on' );
 		} );
-
-		// Fix sub-menus for touch devices.
-		if ( 'ontouchstart' in window ) {
-			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.eastBlue', function( e ) {
-				var el = $( this ).parent( 'li' );
-
-				if ( ! el.hasClass( 'focus' ) ) {
-					e.preventDefault();
-					el.toggleClass( 'focus' );
-					el.siblings( '.focus' ).removeClass( 'focus' );
-				}
-			} );
-		}
-
-		// Better focus for hidden submenu items for accessibility.
-		menu.find( 'a' ).on( 'focus.eastBlue blur.eastBlue', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+		searchButton.on( 'click.eastBlue', function() {
+			topbar.toggleClass( 'toggled-search' );
 		} );
 	} )();
 
@@ -90,14 +63,14 @@
 	/**
 	 * Arranges footer widgets vertically.
 	 */
-	if ( $.isFunction( $.fn.masonry ) ) {
-		var columnWidth = body.is( '.sidebar' ) ? 228 : 245;
+	// if ( $.isFunction( $.fn.masonry ) ) {
+	// 	var columnWidth = body.is( '.sidebar' ) ? 228 : 245;
 
-		$( '#secondary .widget-area' ).masonry( {
-			itemSelector: '.widget',
-			columnWidth: columnWidth,
-			gutterWidth: 20,
-			isRTL: body.is( '.rtl' )
-		} );
-	}
+	// 	$( '#secondary .widget-area' ).masonry( {
+	// 		itemSelector: '.widget',
+	// 		columnWidth: columnWidth,
+	// 		gutterWidth: 20,
+	// 		isRTL: body.is( '.rtl' )
+	// 	} );
+	// }
 } )( jQuery );

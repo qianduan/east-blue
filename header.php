@@ -70,6 +70,8 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 	<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'eastBlue' ); ?>"><?php _e( 'Skip to content', 'eastBlue' ); ?></a>
 		<div class="topbar">
 			<div class="inner">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class='logo-mobile'><?php bloginfo( 'name' ); ?></a>
+				<a class="icon-bars" href="javascript:;"></a><a class="icon-search" href="javascript:;"></a>
 				<nav class="nav-top">
 				<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'top-menu' ) ); ?>
 				</nav>
@@ -82,7 +84,7 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 	<?php endif; ?>
 		<!-- 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
-		<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+		<nav class="navigation main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Menu', 'eastBlue' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
