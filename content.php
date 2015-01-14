@@ -30,7 +30,7 @@
 		<?php if ( comments_open() && ! is_single() ) : ?>
 		<span class="icon-comment"><?php comments_popup_link('发表评论', '1 条评论', '% 条评论'); ?></span>
 		<?php endif; // comments_open() ?>
-		<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="icon-edit">', '</span>' ); ?>
 		</div><!-- .article-meta -->
 	</header><!-- .article-header -->
 

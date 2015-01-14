@@ -22,7 +22,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'eastBlue' ),
+				printf( _nx( '有一条评论了', '有%1$s条评论了', get_comments_number(), 'comments title', 'eastBlue' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -43,13 +43,13 @@ if ( post_password_required() )
 		?>
 		<nav class="navigation comment-navigation" role="navigation">
 			<h1 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', 'eastBlue' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'eastBlue' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'eastBlue' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; 旧评论', 'eastBlue' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( '新评论&rarr;', 'eastBlue' ) ); ?></div>
 		</nav><!-- .comment-navigation -->
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.' , 'eastBlue' ); ?></p>
+		<p class="no-comments"><?php _e( '评论被关闭了呢.' , 'eastBlue' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

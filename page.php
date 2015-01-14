@@ -35,7 +35,7 @@ get_header(); ?>
 					</div><!-- .article-content -->
 
 					<footer class="article-meta">
-						<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="icon-edit">', '</span>' ); ?>
 					</footer><!-- .article-meta -->
 				</article><!-- #post -->
 
