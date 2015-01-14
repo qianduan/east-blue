@@ -1395,7 +1395,7 @@ footer.article-meta {
 	.sidebar-container{
 		width: 100%
 	}
-	.nav-top .menu-topbar-container,.topbar .search-form,.nav-menu{
+	.nav-top .menu-top-container,.topbar .search-form,.nav-menu{
 		display: none;
 	}
 	.logo-mobile,.icon-bars,.icon-search{
