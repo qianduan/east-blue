@@ -1349,10 +1349,11 @@ footer.article-meta {
 	width: 
 }
 .backToTop{
-	position: absolute;
+	position: fixed;
 	width: 44px;
 	height: 44px;
 	right: 0;
+	bottom: 20px;
 	background: #18bc9c;
 	color: #fff;
 	font-size: 28px;
