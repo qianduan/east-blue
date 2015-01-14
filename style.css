@@ -56,13 +56,9 @@ body {
 	margin: 0;
 }
 
-a {
+a,a:visited {
 	color: #18BC9C;
 	text-decoration: none;
-}
-
-a:visited {
-	color: #18BC9C;
 }
 
 a:focus {
@@ -1061,7 +1057,6 @@ footer.article-meta {
 
 
 .author-link {
-	color: #ca3c08;
 	margin-left: 2px;
 }
 
