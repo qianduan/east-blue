@@ -278,7 +278,6 @@ button,input,textarea {
 	font-family: inherit;
 	padding: 5px;
 	line-height: normal;
-	border-radius: 4px;
 }
 
 button,html input[type="button"],input[type="reset"],input[type="submit"] {
@@ -340,8 +339,7 @@ input[type="reset"],.btn {
   white-space: nowrap;
   padding: 10px 15px;
   font-size: 15px;
-  line-height: 1.42857143;
-  border-radius: 4px;
+  line-height: 1.5;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -592,7 +590,6 @@ icon font
 
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
-	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
@@ -1040,7 +1037,6 @@ footer.article-meta {
 	line-height: 1;
 	background-color: #18bc9c;
 	border: 1px solid transparent;
-	border-radius: 50px;
 	color: #fff;
 	font-size: 32px;
 }
