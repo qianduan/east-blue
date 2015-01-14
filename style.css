@@ -403,7 +403,7 @@ input[type="reset"],.btn-default {
   background-color: #95a5a6;
   border-color: #95a5a6;
 }
-.btn-warning {
+.btn-warning,.btn-warning:visited {
   color: #ffffff;
   background-color: #f39c12;
   border-color: #f39c12;
@@ -1359,7 +1359,7 @@ footer.article-meta {
 	line-height: 1.3;
 	text-align: center;
 }
-.backToTop a,.backToTop a:hover{
+.backToTop a,.backToTop a:hover,.backToTop a:visited{
 	color: #fff;
 	text-decoration: none;
 }

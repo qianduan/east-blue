@@ -62,31 +62,31 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
-<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20140527' type='text/css' media='all' />
+<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20150114' type='text/css' media='all' />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <header class="header" role="banner">
 	<a class="screen-reader-text skip-link" id="pageTop" href="#content" title="<?php esc_attr_e( 'Skip to content', 'eastBlue' ); ?>"><?php _e( 'Skip to content', 'eastBlue' ); ?></a>
-		<div class="topbar">
-			<div class="inner">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class='logo-mobile'><?php bloginfo( 'name' ); ?></a>
-				<a class="icon-bars" href="javascript:;"></a><a class="icon-search" href="javascript:;"></a>
-				<nav class="nav-top">
-				<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'top-menu' ) ); ?>
-				</nav>
-				<?php get_search_form(); ?>
-			</div>
+	<div class="topbar">
+		<div class="inner">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class='logo-mobile'><?php bloginfo( 'name' ); ?></a>
+			<a class="icon-bars" href="javascript:;"></a><a class="icon-search" href="javascript:;"></a>
+			<nav class="nav-top">
+			<?php wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_class' => 'top-menu' ) ); ?>
+			</nav>
+			<?php get_search_form(); ?>
 		</div>
-	<?php if ( is_single() || is_page()) : ?>
-		<h2 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-	<?php else : ?>
-		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	<?php endif; ?>
-		<!-- 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
-		<nav class="navigation main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Menu', 'eastBlue' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header>
-	<div id="main" class="body">
+	</div>
+<?php if ( is_single() || is_page()) : ?>
+	<h2 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+<?php else : ?>
+	<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+<?php endif; ?>
+	<!-- 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
+	<nav class="navigation main-navigation" role="navigation">
+		<button class="menu-toggle"><?php _e( 'Menu', 'eastBlue' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+	</nav><!-- #site-navigation -->
+</header>
+<div id="main" class="body">

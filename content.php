@@ -36,7 +36,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="article-content">
-		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100topright.jpg" alt=""></a></div>
+		<!-- <div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100topright.jpg" alt=""></a></div> -->
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
