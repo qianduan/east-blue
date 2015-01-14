@@ -571,7 +571,7 @@ icon font
 .icon-cat:before { content: '\e807'; } /* '' */
 .icon-html5:before { content: '\e808'; } /* '' */
 .icon-search:before { content: '\e809'; } /* '' */
-.icon-share-alt:before { content: '\e80a'; } /* '' */
+.icon-share:before { content: '\e80a'; } /* '' */
 .icon-tag:before { content: '\e80b'; } /* '' */
 .icon-twitter:before { content: '\e80c'; } /* '' */
 .icon-angle-left:before { content: '\e80d'; } /* '' */
@@ -637,7 +637,12 @@ main framwork
 	display: inline-block;
 	vertical-align: top;
 }
-
+.topbar .menu-item{
+	margin-right: .5em;
+}
+.topbar .top-menu{
+	margin-left: 0
+}
 /**
 logo
 **/
@@ -1107,42 +1112,22 @@ footer.article-meta {
  * 5.11 404
  * ----------------------------------------------------------------------------
  */
-
-.error404 .page-header {
-	background-color: #fff;
-}
-
-.error404 .page-title {
-	line-height: 0.6;
-	margin: 0;
-	padding: 300px;
-	position: relative;
-	text-align: center;
+.error404 .error-content{
 	width: auto;
-}
-
-.error404 .page-title:before {
-	color: #e8e5ce;
-	content: "\f423";
-	font-size: 964px;
-	line-height: 0.6;
-	overflow: hidden;
-	position: absolute;
-	left: 7px;
-	top: 28px;
-}
-
-.error404 .page-wrapper {
-	background-color: #e8e5ce;
-}
-
-.error404 .page-header,
-.error404 .page-content {
-	margin: 0 auto;
-	max-width: 1040px;
+	max-width: 960px;
+	background-color: #fff;
+	text-align: center;
 	padding-bottom: 40px;
-	width: 100%;
 }
+
+.error404 .error-wrapper {
+	overflow: hidden;
+}
+.error404 .error-header{
+	overflow: hidden;
+	margin-top: 20px
+}
+
 
 
 /**
@@ -1372,6 +1357,51 @@ footer.article-meta {
 .search-form .search-submit{
 	display: none;
 }
+
+.share-box{
+	text-align: right;
+	font-size: 32px;
+	padding: 20px;
+	color: #b4bcc2;
+	position: relative;
+}
+.share-box a:hover{
+	text-decoration: none;
+	opacity: .7
+}
+.share-box a:focus{
+	outline: 0
+}
+.share-box .icon-weixin{
+	color:#05CB14;
+}
+.share-box .icon-weibo{
+	color:#E6162D;
+}
+.share-box .icon-twitter{
+	color:#55acee;
+}
+.qr-weixin{
+	position: absolute;
+	top:20px;
+	right: 10px;
+	width: 
+}
+.backToTop{
+	position: absolute;
+	width: 44px;
+	height: 44px;
+	right: 0;
+	background: #18bc9c;
+	color: #fff;
+	font-size: 28px;
+	line-height: 1.3;
+	text-align: center;
+}
+.backToTop a,.backToTop a:hover{
+	color: #fff;
+	text-decoration: none;
+}
 /**
  * 8.0 Media Queries
  * ----------------------------------------------------------------------------
@@ -1387,23 +1417,6 @@ footer.article-meta {
 }
 @viewport {
 	width: device-width;
-}
-
-@media (max-width: 1599px) {
-	
-}
-
-@media (max-width: 1069px) {
-	
-}
-
-@media (max-width: 999px) {
-	
-}
-
-/* Collapse oversized image and pulled images after iPad breakpoint. */
-@media (max-width: 767px) {
-	
 }
 
 @media (max-width: 643px) {
@@ -1456,6 +1469,15 @@ footer.article-meta {
 	.toggled-search .search-form input[type=search]{
 		display: inline-block;
 		width: 100%;
+	}
+	.article-meta{
+		display: none;
+	}
+	.single .article-meta{
+		display: block;
+	}
+	.share-box{
+		display: none;
 	}
 }
 

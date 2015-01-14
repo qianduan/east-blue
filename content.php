@@ -49,6 +49,13 @@
 		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100top.jpg" alt=""></a></div>
 	</div><!-- .article-content -->
 	<?php endif; ?>
+
+	<!-- <div class="share-box">
+		<span class="icon-share"></span>
+		<a class="icon-weixin" href="javascript:;"></a>
+		<a class="icon-weibo" href="javascript:;"></a>
+		<a class="icon-twitter" href="javascript:;"></a>
+	</div -->
 	<?php if ( is_single() && get_the_author_meta( 'description' ) ) : ?>
 		<footer class="article-meta">
 			<?php get_template_part( 'author-bio' ); ?>

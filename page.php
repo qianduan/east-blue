@@ -38,7 +38,6 @@ get_header(); ?>
 			</article><!-- #post -->
 <?php comments_template(); ?>
 		<?php endwhile; ?>
-	</div>
-	<?php get_sidebar(); ?>
+	</div><?php get_sidebar(); ?>
 </div><!-- #primary -->
 <?php get_footer(); ?>

@@ -8,11 +8,13 @@
  */
 ?>
 
-<header class="page-header">
-	<h1 class="page-title"><?php _e( '找不到啊！', 'eastBlue' ); ?></h1>
-</header>
-
-<div class="page-content">
+	<div class="error-wrapper">
+		<div class="error-content">
+			<header class="error-header">
+				<h1 class="error-title"><?php _e( '什么都没有', 'eastBlue' ); ?></h1>
+			</header>
+			
+			<div class="error-msg">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 	<p><?php printf( __( '准备好了发布你的第一篇文章了? <a href="%1$s">点击这里开始</a>.', 'eastBlue' ), admin_url( 'post-new.php' ) ); ?></p>

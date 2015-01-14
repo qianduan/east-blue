@@ -18,5 +18,6 @@ get_header(); ?>
 			<?php comments_template(); ?>
 		<?php endwhile; ?>
 	</div><?php get_sidebar(); ?>
+	<a class="backToTop" href="#pageTop"><span class="icon-arrow-up"></span></a>
 </div><!-- #primary -->
 <?php get_footer(); ?>

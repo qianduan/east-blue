@@ -67,7 +67,7 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 </head>
 <body <?php body_class(); ?>>
 <header class="header" role="banner">
-	<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'eastBlue' ); ?>"><?php _e( 'Skip to content', 'eastBlue' ); ?></a>
+	<a class="screen-reader-text skip-link" id="pageTop" href="#content" title="<?php esc_attr_e( 'Skip to content', 'eastBlue' ); ?>"><?php _e( 'Skip to content', 'eastBlue' ); ?></a>
 		<div class="topbar">
 			<div class="inner">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class='logo-mobile'><?php bloginfo( 'name' ); ?></a>

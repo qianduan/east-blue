@@ -73,4 +73,22 @@
 	// 		isRTL: body.is( '.rtl' )
 	// 	} );
 	// }
+
+	var topBtn=$(".backToTop");
+	topBtn.hide();
+	$(function () {
+		$(window).scroll(function(){
+			if ($(window).scrollTop()>400){
+				topBtn.fadeIn(500);
+			}
+			else
+			{
+				topBtn.fadeOut(500);
+			}
+		});
+		topBtn.click(function(){
+			$('body,html').animate({scrollTop:0},500);
+		return false;
+		});
+	});
 } )( jQuery );

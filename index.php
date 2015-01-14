@@ -27,5 +27,6 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 		</div><?php get_sidebar(); ?>
+		<a class="backToTop" href="#pageTop"><span class="icon-arrow-up"></span></a>
 </div><!-- #content -->
 <?php get_footer(); ?>
