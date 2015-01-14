@@ -1352,7 +1352,7 @@ footer.article-meta {
 	position: fixed;
 	width: 44px;
 	height: 44px;
-	right: 0;
+	right: 20px;
 	bottom: 20px;
 	background: #18bc9c;
 	color: #fff;
@@ -1440,6 +1440,9 @@ footer.article-meta {
 	}
 	.share-box{
 		display: none;
+	}
+	.backToTop{
+		display: none
 	}
 }
 
