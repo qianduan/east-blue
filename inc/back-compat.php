@@ -1,8 +1,8 @@
 <?php
 /**
- * Twenty Thirteen back compat functionality
+ * Back compat functionality
  *
- * Prevents Twenty Thirteen from running on WordPress versions prior to 3.6,
+ * Prevents East Blue from running on WordPress versions prior to 3.6,
  * since this theme is not meant to be backward compatible and relies on
  * many new functions and markup changes introduced in 3.6.
  *
@@ -12,7 +12,7 @@
  */
 
 /**
- * Prevent switching to Twenty Thirteen on old versions of WordPress.
+ * Prevent switching to East Blue on old versions of WordPress.
  *
  * Switches to the default theme.
  *
@@ -34,7 +34,7 @@ add_action( 'after_switch_theme', 'eastBlue_switch_theme' );
  * @since East Blue 1.0
  */
 function eastBlue_upgrade_notice() {
-	$message = sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] );
+	$message = sprintf( __( 'East Blue requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -44,7 +44,7 @@ function eastBlue_upgrade_notice() {
  * @since East Blue 1.0
  */
 function eastBlue_customize() {
-	wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ), '', array(
+	wp_die( sprintf( __( 'East Blue requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -57,7 +57,7 @@ add_action( 'load-customize.php', 'eastBlue_customize' );
  */
 function eastBlue_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'East Blue requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'eastBlue' ), $GLOBALS['wp_version'] ) );
 	}
 }
 add_action( 'template_redirect', 'eastBlue_preview' );
