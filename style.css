@@ -1359,7 +1359,7 @@ footer.article-meta {
 	line-height: 1.3;
 	text-align: center;
 }
-.backToTop a,.backToTop a:hover,.backToTop a:visited{
+.backToTop:hover,.backToTop:visited{
 	color: #fff;
 	text-decoration: none;
 }
