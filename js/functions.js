@@ -74,9 +74,9 @@
 	// 	} );
 	// }
 
-	var topBtn=$(".backToTop");
-	topBtn.hide();
-	$(function () {
+	(function () {
+		var topBtn=$(".backToTop");
+		topBtn.hide();
 		$(window).scroll(function(){
 			if ($(window).scrollTop()>400){
 				topBtn.fadeIn(500);
