@@ -14,7 +14,7 @@
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?><div id="tertiary" class="sidebar-container" role="complementary">
 		<div class="sidebar-inner">
 			<div class="widget-area">
-				<div class="widget give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100topright.jpg" alt=""></a></div>
+				<div class="widget give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/1002015r.jpg" alt=""></a></div>
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div><!-- .widget-area -->
 		</div><!-- .sidebar-inner -->

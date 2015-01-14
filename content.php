@@ -46,7 +46,7 @@
 
 			wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
 		?>
-		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/100top.jpg" alt=""></a></div>
+		<div class="give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/1002015l.jpg" alt=""></a></div>
 	</div><!-- .article-content -->
 	<?php endif; ?>
 

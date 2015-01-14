@@ -537,7 +537,7 @@ icon font
   font-style: normal;
 }
  
- [class^="icon-"]:before, [class*=" icon-"]:before,.comment-reply-link:before,.comment-reply-login:before {
+[class^="icon-"]:before, [class*=" icon-"]:before,.comment-reply-link:before,.comment-reply-login:before {
   font-family: "quicon";
   font-style: normal;
   font-weight: normal;
@@ -780,29 +780,26 @@ main sidebar
 .widget li > ol {
 	margin-left: 20px;
 }
-
+/*promotions*/
 .give-me-five{
 	text-align: center;
+	padding: 5px 0
 }
 .give-me-five img{
 	max-width: 100%;
 }
-/*
- * Responsive images
- *
- * Fluid images for posts, comments, and widgets
- */
+
+/*image sizing*/
 .article-content img,
-.entry-summary img,
+.article-summary img,
 .comment-content img,
 .widget img,
 .wp-caption {
 	max-width: 100%;
 }
 
-/* Make sure images with WordPress-added height and width attributes are scaled correctly. */
 .article-content img,
-.entry-summary img,
+.article-summary img,
 .comment-content img[height],
 img[class*="align"],
 img[class*="wp-image-"],
@@ -825,10 +822,6 @@ video {
 	max-width: 100%;
 }
 
-/* Override the Twitter embed fixed width. */
-.article-content .twitter-tweet-rendered {
-	max-width: 100% !important;
-}
 
 /* Images */
 .alignleft {
@@ -845,23 +838,14 @@ video {
 	margin-right: auto;
 }
 
-figure.wp-caption.alignleft,
 img.alignleft {
 	margin: 5px 20px 5px 0;
 }
 
-.wp-caption.alignleft {
-	margin: 5px 10px 5px 0;
-}
-
-figure.wp-caption.alignright,
 img.alignright {
 	margin: 5px 0 5px 20px;
 }
 
-.wp-caption.alignright {
-	margin: 5px 0 5px 10px;
-}
 
 img.aligncenter {
 	margin: 5px auto;
@@ -871,32 +855,10 @@ img.alignnone {
 	margin: 5px 0;
 }
 
-.wp-caption .wp-caption-text,
-.entry-caption {
-	color: #220e10;
-	font-size: 18px;
-	font-style: italic;
-	font-weight: 300;
-	margin: 0 0 24px;
-}
-
-div.wp-caption.alignright img[class*="wp-image-"] {
-	float: right;
-}
-
-div.wp-caption.alignright .wp-caption-text {
-	padding-left: 10px;
-}
-
 /**
  * 4.1 Site Header
  * ----------------------------------------------------------------------------
  */
-
-.site-description {
-	display: none
-}
-
 
 .article-thumbnail img {
 	display: block;
@@ -925,7 +887,7 @@ div.wp-caption.alignright .wp-caption-text {
 
 
 /**
- * 5.2 Entry Meta
+ * article Meta
  * ----------------------------------------------------------------------------
  */
 
@@ -942,11 +904,14 @@ div.wp-caption.alignright .wp-caption-text {
 	margin-right: 0;
 }
 
-.sticky.format-standard .article-meta .date
+.sticky .article-meta .date
 {
 	display: none;
 }
 
+footer.article-meta {
+	margin-top: 24px;
+}
 
 /**
  * 5.3 Entry Content
@@ -962,13 +927,6 @@ div.wp-caption.alignright .wp-caption-text {
 	padding: 0 20px 
 }
 
-footer.article-meta {
-	margin-top: 24px;
-}
-
-.format-standard footer.article-meta {
-	margin-top: 0;
-}
 
 /* Page links */
 .page-links {
