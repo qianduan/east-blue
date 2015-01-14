@@ -6,4 +6,4 @@
 
 基于Wordpress官方的Twenty Thirteen模板开发
 
-配色基于 FlatLy(http://bootswatch.com/flatly/)
+配色基于 [Flatly](http://bootswatch.com/flatly/)
