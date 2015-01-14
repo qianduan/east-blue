@@ -7,3 +7,5 @@
 基于Wordpress官方的Twenty Thirteen模板开发
 
 配色基于 [Flatly](http://bootswatch.com/flatly/)
+
+![预览](http://feimg.qiniudn.com/qianduan2015.jpg)
