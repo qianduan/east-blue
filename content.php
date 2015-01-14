@@ -12,9 +12,9 @@
 
 <article id="post-<?php the_ID(); ?>" class="article">
 	<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
-		<div class="article-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div>
+	<div class="article-thumbnail">
+		<?php the_post_thumbnail(); ?>
+	</div>
 	<?php endif; ?>
 	<header class="article-header">
 		<h1 class="article-title">

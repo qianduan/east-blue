@@ -15,27 +15,27 @@ get_header(); ?>
 
 <div id="content" class="inner">
 	<div class="content"  role="main">
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" class="article">
-			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-				<div class="article-thumbnail">
-					<?php the_post_thumbnail(); ?>
-				</div>
-			<?php endif; ?>
-				<header class="article-header">
-					<h1 class="article-title"><?php the_title(); ?></h1>
-				</header><!-- .article-header -->
+		<?php /* The loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+		<article id="post-<?php the_ID(); ?>" class="article">
+		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+			<div class="article-thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
+			<header class="article-header">
+				<h1 class="article-title"><?php the_title(); ?></h1>
+			</header><!-- .article-header -->
 
-				<div class="article-content">
-					<?php the_content(); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
-				</div><!-- .article-content -->
+			<div class="article-content">
+				<?php the_content(); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'eastBlue' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+			</div><!-- .article-content -->
 
-				<footer class="article-meta">
-					<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="icon-edit">', '</span>' ); ?>
-				</footer><!-- .article-meta -->
-			</article><!-- #post -->
+			<footer class="article-meta">
+				<?php edit_post_link( __( 'Edit', 'eastBlue' ), '<span class="icon-edit">', '</span>' ); ?>
+			</footer>
+		</article><!-- #post -->
 <?php comments_template(); ?>
 		<?php endwhile; ?>
 	</div><?php get_sidebar(); ?>
