@@ -42,12 +42,6 @@
 		} );
 	} )();
 
-	/**
-	 * Makes "skip to content" link work correctly in IE9 and Chrome for better
-	 * accessibility.
-	 *
-	 * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-	 */
 	_window.on( 'hashchange.eastBlue', function() {
 		var element = document.getElementById( location.hash.substring( 1 ) );
 
@@ -60,25 +54,12 @@
 		}
 	} );
 
-	/**
-	 * Arranges footer widgets vertically.
-	 */
-	// if ( $.isFunction( $.fn.masonry ) ) {
-	// 	var columnWidth = body.is( '.sidebar' ) ? 228 : 245;
-
-	// 	$( '#secondary .widget-area' ).masonry( {
-	// 		itemSelector: '.widget',
-	// 		columnWidth: columnWidth,
-	// 		gutterWidth: 20,
-	// 		isRTL: body.is( '.rtl' )
-	// 	} );
-	// }
 
 	(function () {
-		var topBtn=$(".backToTop");
+		var topBtn=jQuery(".backToTop");
 		topBtn.hide();
-		$(window).scroll(function(){
-			if ($(window).scrollTop()>400){
+		jQuery(window).scroll(function(){
+			if (jQuery(window).scrollTop()>400){
 				topBtn.fadeIn(500);
 			}
 			else
@@ -87,7 +68,7 @@
 			}
 		});
 		topBtn.click(function(){
-			$('body,html').animate({scrollTop:0},500);
+			jQuery('body,html').animate({scrollTop:0},500);
 		return false;
 		});
 	});
