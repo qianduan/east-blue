@@ -563,7 +563,7 @@ icon font
   /* remove if not needed */
   margin-left: .2em;
 }
-
+.icon-delete:before { content: '\e800'; } /* '' */
 .icon-angle-right:before { content: '\e801'; } /* '' */
 .icon-arrow-up:before { content: '\e802'; } /* '' */
 .icon-bars:before { content: '\e803'; } /* '' */
