@@ -47,7 +47,8 @@ html {
 
 html,button,input,select,textarea {
 	font-family: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei", sans-serif;
-	font-weight: 100;
+	-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;
+	font-weight: 400;
 }
 
 body {
