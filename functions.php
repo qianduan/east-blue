@@ -370,9 +370,8 @@ endif;
  * @return array The filtered body class list.
  */
 function eastBlue_body_class( $classes ) {
-	if ( ! is_multi_author() )
-		$classes[] = 'single-author';
-	// todo add os-class
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+    if(strchr($useragent,'Windows')) $classes[] = 'isWindows';
 	return $classes;
 }
 add_filter( 'body_class', 'eastBlue_body_class' );

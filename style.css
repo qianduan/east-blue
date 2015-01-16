@@ -45,16 +45,16 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-html,button,input,select,textarea {
-	font-family: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei", sans-serif;
+body{
+	font-family:"Helvetica neue",Helvetica,"lantinghei sc", sans-serif;
 	-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;
 	font-weight: 400;
-}
-
-body {
 	color: #2C3E50;
 	line-height: 1.6;
 	margin: 0;
+}
+.isWindows{
+	font-family:Tahoma,"Microsoft Yahei", sans-serif;
 }
 
 a,a:visited {
@@ -227,11 +227,6 @@ nav ol {
 	padding: 0;
 }
 
-li > ul,
-li > ol {
-	margin: 0 0 0 2em;
-}
-
 img {
 	-ms-interpolation-mode: bicubic;
 	border: 0;
@@ -242,11 +237,7 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
-figure {
-	margin: 0;
-}
-
-form {
+figure, form {
 	margin: 0;
 }
 
@@ -518,12 +509,13 @@ hr {
 	border: 0 dotted;
 	border-width: 1px 0 0;
 	height: 1px;
-	margin: 0 0 24px;
+	margin: 12px 0;
 }
 
 /**
-icon font
-*/
+ * icon font
+ * ----------------------------------------------------------------------------
+ */
 @font-face {
   font-family: 'quicon';
   src: url('font/quicon.eot?35356398');
@@ -579,7 +571,10 @@ icon font
 .icon-reply:before,.comment-reply-link:before,.comment-reply-login:before { content: '\e812'; } /* '' */
 
 
-/* Assistive text */
+/* 
+ * Assistive text 
+ * ----------------------------------------------------------------------------
+ */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -606,8 +601,9 @@ icon font
 
 
 /**
-main framwork
-**/
+ * main framwork
+ * ----------------------------------------------------------------------------
+ **/
 .topbar{
 	height: 48px;
 	line-height: 48px;
@@ -641,15 +637,19 @@ main framwork
 	margin-left: 0
 }
 /**
-logo
-**/
+ * logo
+ * ----------------------------------------------------------------------------
+ **/
 .logo{
 	text-align: center;
 	font-size: 48px;
 }
 .logo a,.logo a:visited{
 	color: #2C3E50;
-	font-family: "STFangsong","Songti TC","simsun","宋体",Arial;
+	font-family: "STFangsong","Songti TC",Arial,serif;
+}
+.isWindows .logo a,.isWindows .logo a:visited{
+	font-family: "simsun","宋体",Arial,serif;	
 }
 .logo-mobile{
 	display: none;
@@ -692,8 +692,9 @@ logo
 }
 
 /**
-main content
-**/
+ * main content
+ * ----------------------------------------------------------------------------
+ **/
 
 .body{
 	background-color: #ECF0F1;
@@ -707,8 +708,9 @@ main content
 	margin-right: 20px;
 }
 /*
-article
-*/
+ * article
+ * ----------------------------------------------------------------------------
+ */
 .article{
 	background-color: #fff;
 	margin: 20px 0 0;
@@ -716,9 +718,135 @@ article
 	overflow: hidden;
 }
 
+
+.article-thumbnail img {
+	display: block;
+	margin: 0;
+	width: 100%;
+}
+
+.article-header {
+	margin-bottom: 10px;
+	padding: 0 20px;
+}
+
+.article-title {
+	font-weight: normal;
+	margin: 20px 0 5px;
+	line-height: 1.3
+}
+
+.article-title a {
+	color: #141412;
+}
+
+.article-title a:hover {
+	color: #18BC9C;
+}
+
+.article-summary, .article-content {
+	-webkit-hyphens: auto;
+	-moz-hyphens:    auto;
+	-ms-hyphens:     auto;
+	hyphens:         auto;
+	word-wrap: break-word;
+	padding: 0 20px 
+}
+
+/**
+ * article Meta
+ * ----------------------------------------------------------------------------
+ */
+
+.article-meta {
+	clear: both;
+	font-size: 14px;
+}
+
+.article-meta > span {
+	margin-right: 20px;
+}
+
+.article-meta > span:last-child {
+	margin-right: 0;
+}
+
+.sticky .article-meta .date
+{
+	display: none;
+}
+
+footer.article-meta {
+	margin-top: 24px;
+}
+
 /*
-main sidebar
+*image sizing
+* ----------------------------------------------------------------------------
 */
+.article img,
+.comment-content img,
+.widget img {
+	max-width: 100%;
+}
+
+.article img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto;
+}
+
+img.size-full,
+img.size-large,
+img.wp-post-image {
+	height: auto;
+	max-width: 100%;
+}
+/* Make sure videos and embeds fit their containers. */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+}
+
+/* Images */
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignleft {
+	margin: 5px 20px 5px 0;
+}
+
+img.alignright {
+	margin: 5px 0 5px 20px;
+}
+
+
+img.aligncenter {
+	margin: 5px auto;
+}
+
+img.alignnone {
+	margin: 5px 0;
+}
+/*
+ *main sidebar
+ * ----------------------------------------------------------------------------
+ */
 
 .sidebar-container{
 	width: 320px;
@@ -730,7 +858,7 @@ main sidebar
 }
 
 /**
- * 6.1 Widgets
+ * Widgets
  * ----------------------------------------------------------------------------
  */
 
@@ -780,7 +908,10 @@ main sidebar
 .widget li > ol {
 	margin-left: 20px;
 }
-/*promotions*/
+/*
+ *promotions
+ * ----------------------------------------------------------------------------
+ */
 .give-me-five{
 	text-align: center;
 	padding: 10px 0
@@ -789,146 +920,11 @@ main sidebar
 	max-width: 100%;
 }
 
-/*image sizing*/
-.article-content img,
-.article-summary img,
-.comment-content img,
-.widget img,
-.wp-caption {
-	max-width: 100%;
-}
 
-.article-content img,
-.article-summary img,
-.comment-content img[height],
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"] {
-	height: auto;
-}
-
-img.size-full,
-img.size-large,
-img.wp-post-image {
-	height: auto;
-	max-width: 100%;
-}
-
-/* Make sure videos and embeds fit their containers. */
-embed,
-iframe,
-object,
-video {
-	max-width: 100%;
-}
-
-
-/* Images */
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
-
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-img.alignleft {
-	margin: 5px 20px 5px 0;
-}
-
-img.alignright {
-	margin: 5px 0 5px 20px;
-}
-
-
-img.aligncenter {
-	margin: 5px auto;
-}
-
-img.alignnone {
-	margin: 5px 0;
-}
-
-/**
- * 4.1 Site Header
- * ----------------------------------------------------------------------------
- */
-
-.article-thumbnail img {
-	display: block;
-	margin: 0;
-	width: 100%;
-}
-
-.article-header {
-	margin-bottom: 10px;
-	padding: 0 20px;
-}
-
-.article-title {
-	font-weight: normal;
-	margin: 20px 0 5px;
-	line-height: 1.3
-}
-
-.article-title a {
-	color: #141412;
-}
-
-.article-title a:hover {
-	color: #18BC9C;
-}
-
-
-/**
- * article Meta
- * ----------------------------------------------------------------------------
- */
-
-.article-meta {
-	clear: both;
-	font-size: 14px;
-}
-
-.article-meta > span {
-	margin-right: 20px;
-}
-
-.article-meta > span:last-child {
-	margin-right: 0;
-}
-
-.sticky .article-meta .date
-{
-	display: none;
-}
-
-footer.article-meta {
-	margin-top: 24px;
-}
-
-/**
- * 5.3 Entry Content
- * ----------------------------------------------------------------------------
- */
-
-.article-summary, .article-content {
-	-webkit-hyphens: auto;
-	-moz-hyphens:    auto;
-	-ms-hyphens:     auto;
-	hyphens:         auto;
-	word-wrap: break-word;
-	padding: 0 20px 
-}
-
-
-/* Page links */
+/* 
+*Page links 
+* ----------------------------------------------------------------------------
+*/
 .page-links {
 	clear: both;
 	font-size: 16px;
@@ -966,10 +962,9 @@ footer.article-meta {
 }
 
 /**
- * 5.7 Post/Paging Navigation
+ * Post/Paging Navigation
  * ----------------------------------------------------------------------------
  */
-
 
 .paging-navigation {
 	padding: 40px 0;
@@ -1024,7 +1019,7 @@ footer.article-meta {
 
 
 /**
- * 5.8 Author Bio
+ * Author Bio
  * ----------------------------------------------------------------------------
  */
 .article-author{
@@ -1035,7 +1030,7 @@ footer.article-meta {
 .author-info {
 	margin: 0 auto;
 	padding: 10px 20px 0;
-	text-align: left; /* gallery & video post formats */
+	text-align: left; 
 }
 
 .author-avatar .avatar {
@@ -1066,7 +1061,7 @@ footer.article-meta {
 }
 
 /**
- * 5.11 404
+ * 404
  * ----------------------------------------------------------------------------
  */
 .error404 .error-content{
@@ -1088,7 +1083,7 @@ footer.article-meta {
 
 
 /**
- * 5.12 Comments
+ * Comments
  * ----------------------------------------------------------------------------
  */
 .comments-area{
@@ -1188,7 +1183,10 @@ footer.article-meta {
 	line-height: 2;
 }
 
-/* Comment form */
+/*
+*Comment form 
+* ----------------------------------------------------------------------------
+*/
 .comment-respond {
 	padding: 20px;
 	margin-top: 20px;
@@ -1280,7 +1278,7 @@ footer.article-meta {
 	text-align: center;
 }
 /**
- * 7.0 Footer
+ *  Footer
  * ----------------------------------------------------------------------------
  */
 
@@ -1317,7 +1315,10 @@ footer.article-meta {
 .search-form .search-submit{
 	display: none;
 }
-
+/*
+*Share Area, currently disabled
+* ----------------------------------------------------------------------------
+*/
 .share-box{
 	text-align: right;
 	font-size: 32px;
@@ -1347,6 +1348,11 @@ footer.article-meta {
 	right: 10px;
 	width: 
 }
+
+/*
+*back to top arrow
+* ----------------------------------------------------------------------------
+*/
 .backToTop{
 	position: fixed;
 	width: 44px;
@@ -1364,7 +1370,7 @@ footer.article-meta {
 	text-decoration: none;
 }
 /**
- * 8.0 Media Queries
+ * Media Queries
  * ----------------------------------------------------------------------------
  */
 
@@ -1447,7 +1453,7 @@ footer.article-meta {
 
 
 /**
- * 9.0 Print
+ * Print
  * ----------------------------------------------------------------------------
  */
 
