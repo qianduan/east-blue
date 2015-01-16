@@ -1,5 +1,5 @@
 /**
- * Functionality specific to Twenty Thirteen.
+ * Functionality specific to East Blue.
  *
  * Provides helper functions to enhance the theme experience.
  */

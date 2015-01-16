@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Thirteen functions and definitions
+ * East Blue functions and definitions
  *
  * Sets up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -23,27 +23,13 @@
  * @since East Blue 1.0
  */
 
-/*
- * Set up the content width value based on the theme's design.
- *
- * @see eastBlue_content_width() for template-specific adjustments.
- */
-// if ( ! isset( $content_width ) )
-// 	$content_width = 604;
 
 /**
- * Twenty Thirteen only works in WordPress 3.6 or later.
- */
-if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) )
-	require get_template_directory() . '/inc/back-compat.php';
-
-/**
- * Twenty Thirteen setup.
+ * East Blue setup.
  *
  * Sets up theme defaults and registers the various WordPress features that
- * Twenty Thirteen supports.
+ * East Blue supports.
  *
- * @uses load_theme_textdomain() For translation/localization support.
  * @uses add_editor_style() To add Visual Editor stylesheets.
  * @uses add_theme_support() To add support for automatic feed links, post
  * formats, and post thumbnails.
@@ -93,8 +79,7 @@ function eastBlue_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-	
-	// Loads JavaScript file with functionality specific to Twenty Thirteen.
+	// Loads JavaScript file with functionality specific to East Blue.
 	wp_enqueue_script( 'eastBlue-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2015-01-08', true );
 
 }
@@ -372,19 +357,6 @@ function eastBlue_the_attached_image() {
 endif;
 
 /**
- * Return the post URL.
- *
- * @uses get_url_in_content() to get the URL in the post meta (if it exists) or
- * the first link found in the post content.
- *
- * Falls back to the post permalink if no URL is found in the post.
- *
- * @since East Blue 1.0
- *
- * @return string The Link format URL.
- */
-
-/**
  * Extend the default WordPress body classes.
  *
  * Adds body classes to denote:
@@ -434,9 +406,7 @@ function eastBlue_customize_preview_js() {
 add_action( 'customize_preview_init', 'eastBlue_customize_preview_js' );
 
 /*
-
-remove un used script
-
+remove un used script,and put js to bottom of document.
 */
 function footer_enqueue_scripts() {
    remove_action('wp_head', 'wp_print_scripts');
@@ -448,9 +418,10 @@ function footer_enqueue_scripts() {
 }
 add_action('after_setup_theme', 'footer_enqueue_scripts');
 
+// replace gavatar to duoshuo, fuck GFW.
 function rccoder_get_avatar($avatar) {
-$avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),
-"gravatar.duoshuo.com",$avatar);
-return $avatar;
+	$avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),
+	"gravatar.duoshuo.com",$avatar);
+	return $avatar;
 }
 add_filter( 'get_avatar', 'rccoder_get_avatar', 10, 3 );
