@@ -11,14 +11,7 @@ get_header(); ?>
 
 <div id="content" class="inner">
 	<div class="content"  role="main">
-		<?php /* The loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" class="article">
-		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-			<div class="article-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div>
-		<?php endif; ?>
+		<article class="article">
 			<header class="article-header">
 				<h1 class="article-title"><?php the_title(); ?></h1>
 			</header>
@@ -47,7 +40,6 @@ get_header(); ?>
 			<?php } ?>
 			</div>
 		</article>
-		<?php endwhile; ?>
 	</div><?php get_sidebar(); ?>
 </div><!-- #primary -->
 <?php get_footer(); ?>
