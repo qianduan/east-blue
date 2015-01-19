@@ -1390,7 +1390,7 @@ img.alignnone {
 .add-new,.add-success,.add-error{
 	display: none;
 }
-.mce-container{
+.mce-container,.wp-editor-container{
 	border:1px solid #eee;
 	margin-bottom: 15px;
 }
