@@ -752,7 +752,9 @@ hr {
 	word-wrap: break-word;
 	padding: 0 20px 
 }
-
+.article-content li{
+	margin: .5em 0;
+}
 /**
  * article Meta
  * ----------------------------------------------------------------------------

@@ -20,7 +20,7 @@
 			<h3 class="author-title"><?php printf( __( '%s', 'eastBlue' ), get_the_author() ); ?></h3>
 			<?php the_author_meta( 'description' ); ?>
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php printf( __( '查看%s的所以文章', 'eastBlue' ), get_the_author() ); ?>
+				<?php printf( __( '查看%s的所有文章', 'eastBlue' ), get_the_author() ); ?>
 			</a>
 		</div><!-- .author-description -->
 	</div><!-- .author-info -->

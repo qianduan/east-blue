@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<title><?php if ( is_home() ) { ?>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width">
+<title><?php if ( is_home() ) { ?>
 <? bloginfo('name'); ?> | <?php bloginfo('description'); ?>
 <?php } ?>
 <?php if ( is_search() ) { ?>
@@ -34,6 +34,13 @@
 <?php if (function_exists('is_tag')) { if ( is_tag() ) { ?>
 <?php single_tag_title("", true); } } ?>
 </title>
+<!-- framer killer start, fuck China Unicom, fuck China Mobile, fuck China Telecom -->
+<script type="text/javascript"> 
+    if (top.location !== self.location) {
+    top.location=self.location;
+ }
+</script>
+<!-- framer killer end -->
 <?php if (is_home()){
 $description = "前端观察，关注国内外最新最好的前端设计资源和前端开发技术的专业博客";
 $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, CSS, JavaScript, Ajax, resources, showcase,设计展示, 设计秀, 技巧, tips";
@@ -62,7 +69,7 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
-<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20150119' type='text/css' media='all' />
+<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20150120' type='text/css' media='all' />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
