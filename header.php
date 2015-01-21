@@ -69,7 +69,7 @@ $keywords = "前端, 前端设计, 前端开发, 设计, 开发, 前端资源, C
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
-<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20150120' type='text/css' media='all' />
+<link rel='stylesheet' href='<?php echo get_stylesheet_uri() ?>?d=20150121' type='text/css' media='all' />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
