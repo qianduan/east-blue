@@ -483,17 +483,19 @@ td {
 
 caption {
 	font-size: 16px;
-	margin: 20px 0;
+	padding: .5em 1em;
 }
 
 th {
 	font-weight: bold;
 	text-transform: uppercase;
+	text-align: center;
+	background-color: #ECF0F1
 }
 
 td {
 	border-top: 1px solid #ededed;
-	padding: 6px 10px 6px 0;
+	padding: .5em 1em;
 }
 
 del {
@@ -844,6 +846,12 @@ img.aligncenter {
 
 img.alignnone {
 	margin: 5px 0;
+}
+.img-capition{
+	text-align: right;
+	margin: 0;
+	line-height: 1;
+	color: #B4BCC2;
 }
 /*
  *main sidebar
