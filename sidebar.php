@@ -18,7 +18,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?><div id="tertiary" class="sidebar-co
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 				<h3 class="widget-title">最热文章</h3>
 				<ul>
-				   <?php if(function_exists('eastBlue_hot_posts')) eastBlue_hot_posts(30, 10); ?>
+				   <?php if(function_exists('most_comm_posts')) most_comm_posts(30, 10); ?>
 				</ul>
 			</div><!-- .widget-area -->
 		</div><!-- .sidebar-inner -->
