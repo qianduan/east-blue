@@ -16,6 +16,10 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?><div id="tertiary" class="sidebar-co
 			<div class="widget-area">
 				<div class="widget give-me-five"><a href="https://100offer.com/join/cha"><img src="http://feimg.qiniudn.com/1002015r.jpg" alt=""></a></div>
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+				<h3>最热文章</h3>
+				<ul>
+				   <?php if(function_exists('most_comm_posts')) most_comm_posts(30, 10); ?>
+				</ul>
 			</div><!-- .widget-area -->
 		</div><!-- .sidebar-inner -->
 	</div><!-- #tertiary -->

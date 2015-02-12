@@ -29,14 +29,6 @@
  *
  * Sets up theme defaults and registers the various WordPress features that
  * East Blue supports.
- *
- * @uses add_editor_style() To add Visual Editor stylesheets.
- * @uses add_theme_support() To add support for automatic feed links, post
- * formats, and post thumbnails.
- * @uses register_nav_menu() To add support for a navigation menu.
- * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
- *
- * @since East Blue 1.0
  */
 function eastBlue_setup() {
 	add_theme_support( 'automatic-feed-links' );
@@ -170,8 +162,6 @@ add_action( 'widgets_init', 'eastBlue_widgets_init' );
 if ( ! function_exists( 'eastBlue_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
- *
- * @since East Blue 1.0
  */
 function eastBlue_paging_nav() {
 	global $wp_query;
@@ -203,9 +193,7 @@ endif;
 if ( ! function_exists( 'eastBlue_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
-*
-* @since East Blue 1.0
-*/
+ */
 function eastBlue_post_nav() {
 	global $post;
 
@@ -229,9 +217,6 @@ if ( ! function_exists( 'eastBlue_entry_meta' ) ) :
 /**
  * Print HTML with meta information for current post: categories, tags, permalink, author, and date.
  *
- * Create your own eastBlue_entry_meta() to override in a child theme.
- *
- * @since East Blue 1.0
  */
 function eastBlue_entry_meta() {
 	//  Sticky post
@@ -268,12 +253,6 @@ if ( ! function_exists( 'eastBlue_entry_date' ) ) :
 /**
  * Print HTML with date information for current post.
  *
- * Create your own eastBlue_entry_date() to override in a child theme.
- *
- * @since East Blue 1.0
- *
- * @param boolean $echo (optional) Whether to echo the date. Default true.
- * @return string The HTML-formatted post date.
  */
 function eastBlue_entry_date( $echo = true ) {
 	$format_prefix = '%2$s';
@@ -295,30 +274,12 @@ endif;
 if ( ! function_exists( 'eastBlue_the_attached_image' ) ) :
 /**
  * Print the attached image with a link to the next attached image.
- *
- * @since East Blue 1.0
  */
 function eastBlue_the_attached_image() {
-	/**
-	 * Filter the image attachment size to use.
-	 *
-	 * @since East Blue 1.0
-	 *
-	 * @param array $size {
-	 *     @type int The attachment height in pixels.
-	 *     @type int The attachment width in pixels.
-	 * }
-	 */
 	$attachment_size     = apply_filters( 'eastBlue_attachment_size', array( 724, 724 ) );
 	$next_attachment_url = wp_get_attachment_url();
 	$post                = get_post();
 
-	/*
-	 * Grab the IDs of all the image attachments in a gallery so we can get the URL
-	 * of the next adjacent image in a gallery, or the first image (if we're
-	 * looking at the last image in a gallery), or, in a gallery of one, just the
-	 * link to that image file.
-	 */
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
@@ -359,15 +320,6 @@ endif;
 /**
  * Extend the default WordPress body classes.
  *
- * Adds body classes to denote:
- * 1. Single or multiple authors.
- * 2. Active widgets in the sidebar to change the layout and spacing.
- * 3. When avatars are disabled in discussion settings.
- *
- * @since East Blue 1.0
- *
- * @param array $classes A list of existing body class values.
- * @return array The filtered body class list.
  */
 function eastBlue_body_class( $classes ) {
 	$useragent = $_SERVER['HTTP_USER_AGENT'];
@@ -380,9 +332,6 @@ add_filter( 'body_class', 'eastBlue_body_class' );
 /**
  * Add postMessage support for site title and description for the Customizer.
  *
- * @since East Blue 1.0
- *
- * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 function eastBlue_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -396,8 +345,6 @@ add_action( 'customize_register', 'eastBlue_customize_register' );
  *
  * Binds JavaScript handlers to make the Customizer preview
  * reload changes asynchronously.
- *
- * @since East Blue 1.0
  */
 function eastBlue_customize_preview_js() {
 	wp_enqueue_script( 'eastBlue-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
@@ -424,3 +371,24 @@ function rccoder_get_avatar($avatar) {
 	return $avatar;
 }
 add_filter( 'get_avatar', 'rccoder_get_avatar', 10, 3 );
+
+//hot posts
+function eastBlue_hot_posts($days=7, $nums=10) { //$days参数限制时间值，单位为‘天’，默认是7天；$nums是要显示文章数量
+	global $wpdb;
+	$today = date("Y-m-d H:i:s"); //获取今天日期时间
+	$daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) );  //Today - $days
+	$result = $wpdb->get_results("SELECT comment_count, ID, post_title, post_date FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' ORDER BY comment_count DESC LIMIT 0 , $nums");
+	$output = '';
+	if(empty($result)) {
+		$output = '<li>暂无数据</li>';
+	} else {
+		foreach ($result as $topten) {
+			$postid = $topten->ID;
+			$title = $topten->post_title;
+			if ($commentcount != 0) {
+				$output .= '<li><a href="'.get_permalink($postid).'" title="'.$title.'">'.$title.'</a></li>';
+			}
+		}
+	}
+	echo $output;
+}

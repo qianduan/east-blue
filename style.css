@@ -141,7 +141,10 @@ code,kbd,pre,samp {
 	-ms-hyphens:     none;
 	hyphens:         none;
 }
-
+code{
+	padding: .3em;
+	background-color: #f5f5f5;
+}
 pre {
 	background: #f5f5f5;
 	color: #666;
