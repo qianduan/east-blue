@@ -392,7 +392,7 @@ add_filter( 'get_avatar', 'rccoder_get_avatar', 10, 3 );
 // 	}
 // 	echo $output;
 // }
-function most_comm_posts($days=7, $nums=10) { //$days参数限制时间值，单位为‘天’，默认是7天；$nums是要显示文章数量
+function eastBlue_hot_posts($days=7, $nums=10) { //$days参数限制时间值，单位为‘天’，默认是7天；$nums是要显示文章数量
 	global $wpdb;
 	$today = date("Y-m-d H:i:s"); //获取今天日期时间
 	$daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) );  //Today - $days
@@ -406,7 +406,7 @@ function most_comm_posts($days=7, $nums=10) { //$days参数限制时间值，单
 			$title = $topten->post_title;
 			$commentcount = $topten->comment_count;
 			if ($commentcount != 0) {
-				$output .= '<li><a href="'.get_permalink($postid).'" title="'.$title.'">'.$title.'</a> ('.$commentcount.')</li>';
+				$output .= '<li><a href="'.get_permalink($postid).'" title="'.$title.'">'.$title.'</a></li>';
 			}
 		}
 	}
