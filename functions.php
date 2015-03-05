@@ -2,22 +2,6 @@
 /**
  * East Blue functions and definitions
  *
- * Sets up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development
- * and http://codex.wordpress.org/Child_Themes), you can override certain
- * functions (those wrapped in a function_exists() call) by defining them first
- * in your child theme's functions.php file. The child theme's functions.php
- * file is included before the parent theme's file, so the child theme
- * functions would be used.
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are
- * instead attached to a filter or action hook.
- *
- * For more information on hooks, actions, and filters, @link http://codex.wordpress.org/Plugin_API
- *
  * @package WordPress
  * @subpackage East_Blue
  * @since East Blue 1.0
@@ -26,9 +10,6 @@
 
 /**
  * East Blue setup.
- *
- * Sets up theme defaults and registers the various WordPress features that
- * East Blue supports.
  */
 function eastBlue_setup() {
 	add_theme_support( 'automatic-feed-links' );
@@ -44,10 +25,6 @@ function eastBlue_setup() {
 		)
 	);
 
-	/*
-	 * This theme uses a custom image size for featured images, displayed on
-	 * "standard" posts and pages.
-	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 620, 150, true );
 
@@ -56,18 +33,10 @@ function eastBlue_setup() {
 }
 add_action( 'after_setup_theme', 'eastBlue_setup' );
 
-
-
 /**
  * Enqueue scripts and styles for the front end.
- *
- * @since East Blue 1.0
  */
 function eastBlue_scripts_styles() {
-	/*
-	 * Adds JavaScript to pages with the comment form to support
-	 * sites with threaded comments (when in use).
-	 */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
@@ -79,15 +48,6 @@ add_action( 'wp_enqueue_scripts', 'eastBlue_scripts_styles' );
 
 /**
  * Filter the page title.
- *
- * Creates a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @since East Blue 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep   Optional separator.
- * @return string The filtered title.
  */
 function eastBlue_wp_title( $title, $sep ) {
 	global $paged, $page;
@@ -318,12 +278,11 @@ function eastBlue_the_attached_image() {
 endif;
 
 /**
- * Extend the default WordPress body classes.
- *
+ * define special font and other for Windows browser by body classes.
  */
 function eastBlue_body_class( $classes ) {
 	$useragent = $_SERVER['HTTP_USER_AGENT'];
-    if(strchr($useragent,'Windows')) $classes[] = 'isWindows';
+	if(strchr($useragent,'Windows')) $classes[] = 'isWindows';
 	return $classes;
 }
 add_filter( 'body_class', 'eastBlue_body_class' );
@@ -331,7 +290,6 @@ add_filter( 'body_class', 'eastBlue_body_class' );
 
 /**
  * Add postMessage support for site title and description for the Customizer.
- *
  */
 function eastBlue_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -342,9 +300,6 @@ add_action( 'customize_register', 'eastBlue_customize_register' );
 
 /**
  * Enqueue Javascript postMessage handlers for the Customizer.
- *
- * Binds JavaScript handlers to make the Customizer preview
- * reload changes asynchronously.
  */
 function eastBlue_customize_preview_js() {
 	wp_enqueue_script( 'eastBlue-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
@@ -355,12 +310,12 @@ add_action( 'customize_preview_init', 'eastBlue_customize_preview_js' );
 remove un used script,and put js to bottom of document.
 */
 function footer_enqueue_scripts() {
-   remove_action('wp_head', 'wp_print_scripts');
-    //remove_action('wp_head', 'wp_print_head_scripts', 9);
-    remove_action('wp_head', 'wp_enqueue_scripts',1);
-   add_action('wp_footer', 'wp_print_scripts', 5);
-    add_action('wp_footer', 'wp_enqueue_scripts', 1);
-    //add_action('wp_footer', 'wp_print_head_scripts', 5);
+	remove_action('wp_head', 'wp_print_scripts');
+	//remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts',1);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 1);
+	//add_action('wp_footer', 'wp_print_head_scripts', 5);
 }
 add_action('after_setup_theme', 'footer_enqueue_scripts');
 
@@ -372,25 +327,3 @@ function rccoder_get_avatar($avatar) {
 }
 add_filter( 'get_avatar', 'rccoder_get_avatar', 10, 3 );
 
-//hot posts
-
-function eastBlue_hot_posts($days=7, $nums=10) { //$days参数限制时间值，单位为‘天’，默认是7天；$nums是要显示文章数量
-	global $wpdb;
-	$today = date("Y-m-d H:i:s"); //获取今天日期时间
-	$daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) );  //Today - $days
-	$result = $wpdb->get_results("SELECT comment_count, ID, post_title, post_date FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' ORDER BY comment_count DESC LIMIT 0 , $nums");
-	$output = '';
-	if(empty($result)) {
-		$output = '<li>暂无数据.</li>';
-	} else {
-		foreach ($result as $topten) {
-			$postid = $topten->ID;
-			$title = $topten->post_title;
-			$commentcount = $topten->comment_count;
-			if ($commentcount != 0) {
-				$output .= '<li><a href="'.get_permalink($postid).'" title="'.$title.'">'.$title.'</a></li>';
-			}
-		}
-	}
-	echo $output;
-}
